@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ananta — A Boutique Resort Brand in Bali</title>
+<meta name="description" content="Ananta — boutique resort brand in Bali. Two projects in construction and preparation. Built by THIERRA. Investment by FIPOX.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://ananta.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ananta — A Boutique Resort Brand in Bali">
+<meta property="og:description" content="Built to own. Run to pay. Two projects in Bali — Bukit and Canggu.">
+<meta property="og:url" content="https://ananta.com/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0C1416;
+  --surface:#16252A;
+  --surface-2:#1F3338;
+  --paper:#F2EFE8;
+  --paper-dim:rgba(242,239,232,.72);
+  --muted:#7A8B91;
+  --brass:#C9A87C;
+  --brass-soft:rgba(201,168,124,.18);
+  --status-construction:#D9A441;
+  --status-preparation:#7AA9C9;
+  --rule:rgba(242,239,232,.12);
+  --pad-x:clamp(20px,5vw,80px);
+  --f-display:"Bodoni Moda",Georgia,serif;
+  --f-body:"Inter",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;
+  --f-italic:"Cormorant Garamond",Georgia,serif;
+  --t:.45s;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--paper);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{border:none;background:none;color:inherit;font:inherit;cursor:pointer}
+::selection{background:var(--brass);color:var(--bg)}
+
+/* ============ TOP NAV ============ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px var(--pad-x);
+  transition:background var(--t) var(--ease),border-color var(--t) var(--ease);
+  border-bottom:1px solid transparent;
+}
+.topbar.solid{background:rgba(12,20,22,.92);border-bottom-color:var(--rule);backdrop-filter:blur(12px)}
+.topbar__brand{
+  font-family:var(--f-display);font-weight:500;
+  font-size:22px;letter-spacing:.18em;color:var(--paper);
+  text-transform:uppercase;
+}
+.topbar__nav{display:flex;gap:clamp(28px,3.5vw,52px);align-items:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500}
+.topbar__nav a{position:relative;padding:6px 0;color:var(--paper-dim);transition:color var(--t)}
+.topbar__nav a:hover{color:var(--paper)}
+.topbar__nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--brass);transition:right var(--t) var(--ease)}
+.topbar__nav a:hover::after{right:0}
+.topbar__cta{padding:10px 18px;border:1px solid var(--brass);color:var(--brass);font-size:11px;letter-spacing:.22em;text-transform:uppercase;transition:background var(--t),color var(--t)}
+.topbar__cta:hover{background:var(--brass);color:var(--bg)}
+@media(max-width:980px){
+  .topbar__nav{display:none}
+  .topbar{padding:14px 20px}
+  .topbar__cta{padding:8px 14px;font-size:10px;letter-spacing:.18em}
+  .topbar__brand{font-size:18px}
+}
+
+/* ============ HERO ============ */
+.hero{position:relative;height:100vh;min-height:600px;color:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden}
+.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero__veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(12,20,22,.45) 0%,rgba(12,20,22,.25) 35%,rgba(12,20,22,.70) 100%)}
+.hero__inner{position:relative;z-index:2;padding:0 var(--pad-x);display:flex;flex-direction:column;align-items:center;gap:36px;max-width:980px}
+.hero__wordmark{
+  font-family:var(--f-display);font-weight:400;
+  font-size:clamp(72px,11vw,180px);
+  line-height:.95;letter-spacing:.12em;
+  text-transform:uppercase;
+  text-shadow:0 2px 40px rgba(0,0,0,.4);
+}
+.hero__subline{
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--paper-dim);
+  padding-top:18px;padding-bottom:0;
+  position:relative;
+}
+.hero__subline::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:64px;height:1px;background:var(--brass)}
+.hero__claim{
+  font-family:var(--f-italic);font-style:italic;font-weight:300;
+  font-size:clamp(20px,2.4vw,30px);
+  line-height:1.5;color:var(--paper);
+  max-width:38ch;
+}
+.hero__cta{
+  margin-top:8px;
+  padding:16px 36px;
+  border:1px solid var(--brass);color:var(--brass);
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  transition:background var(--t),color var(--t);
+}
+.hero__cta:hover{background:var(--brass);color:var(--bg)}
+.hero__stats{
+  position:absolute;bottom:36px;left:0;right:0;z-index:3;
+  display:flex;justify-content:center;gap:clamp(28px,5vw,72px);
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--paper-dim);
+}
+.hero__stats span strong{font-family:var(--f-display);font-size:18px;font-weight:500;color:var(--brass);letter-spacing:.05em;display:block;margin-bottom:6px}
+@media(max-width:680px){
+  .hero__wordmark{font-size:18vw;letter-spacing:.08em}
+  .hero__stats{flex-wrap:wrap;gap:18px;padding:0 20px;bottom:24px}
+}
+
+/* ============ SECTION SHELL ============ */
+section{padding:clamp(80px,10vw,140px) var(--pad-x);position:relative}
+.eyebrow{
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:24px;display:inline-block;
+}
+.section__head{max-width:880px;margin:0 auto 70px;text-align:center}
+.section__head h2{
+  font-family:var(--f-display);font-weight:400;font-style:normal;
+  font-size:clamp(36px,4.6vw,64px);line-height:1.1;letter-spacing:-.005em;
+  color:var(--paper);
+}
+.section__head p{
+  margin-top:24px;font-size:17px;line-height:1.7;color:var(--paper-dim);
+  max-width:62ch;margin-left:auto;margin-right:auto;
+}
+
+/* ============ BRAND INTRO ============ */
+.brand{background:var(--bg);text-align:center}
+.brand__inner{max-width:880px;margin:0 auto}
+.brand h2{
+  font-family:var(--f-display);font-weight:400;
+  font-size:clamp(28px,3.4vw,46px);line-height:1.35;
+  color:var(--paper);
+}
+.brand h2 em{font-family:var(--f-italic);font-style:italic;color:var(--brass);font-weight:400}
+.brand__meta{
+  margin-top:48px;display:flex;justify-content:center;gap:clamp(36px,6vw,84px);
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--paper-dim);
+}
+.brand__meta span strong{display:block;color:var(--brass);font-family:var(--f-display);font-size:15px;font-weight:500;letter-spacing:.05em;margin-bottom:6px}
+
+/* ============ COLLECTION (In Construction + In Preparation) ============ */
+.collection{background:var(--bg)}
+.project{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  background:var(--surface);
+  margin-bottom:1px;
+}
+.project:nth-child(even){direction:rtl}
+.project:nth-child(even) > *{direction:ltr}
+.project__media{position:relative;aspect-ratio:5/6;overflow:hidden;background:#000}
+.project__media img{width:100%;height:100%;object-fit:cover;transition:transform 8s var(--ease)}
+.project:hover .project__media img{transform:scale(1.04)}
+.project__status{
+  position:absolute;top:24px;left:24px;z-index:2;
+  padding:8px 14px;
+  font-family:var(--f-mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;
+  background:rgba(12,20,22,.85);
+  border:1px solid;
+}
+.project__status.construction{color:var(--status-construction);border-color:var(--status-construction)}
+.project__status.preparation{color:var(--status-preparation);border-color:var(--status-preparation)}
+.project__body{padding:clamp(40px,5vw,80px) clamp(28px,4vw,64px);display:flex;flex-direction:column;justify-content:center;gap:24px}
+.project__index{font-family:var(--f-mono);font-size:11px;letter-spacing:.42em;color:var(--brass);text-transform:uppercase}
+.project__name{
+  font-family:var(--f-display);font-weight:400;
+  font-size:clamp(36px,4vw,56px);line-height:1.05;letter-spacing:-.005em;
+  color:var(--paper);
+}
+.project__lead{font-family:var(--f-italic);font-style:italic;font-size:18px;line-height:1.55;color:var(--paper-dim);max-width:42ch}
+.project__meta{list-style:none;padding:0;margin:8px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;font-size:13px;color:var(--paper-dim)}
+.project__meta li{display:flex;flex-direction:column;gap:4px}
+.project__meta li span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass)}
+.project__cta{
+  margin-top:24px;align-self:flex-start;
+  padding:14px 28px;border:1px solid var(--brass);color:var(--brass);
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;
+  transition:background var(--t),color var(--t);
+}
+.project__cta:hover{background:var(--brass);color:var(--bg)}
+@media(max-width:880px){
+  .project{grid-template-columns:1fr}
+  .project:nth-child(even){direction:ltr}
+  .project__media{aspect-ratio:4/3}
+}
+
+/* ============ INVEST ============ */
+.invest{background:var(--surface);text-align:center}
+.invest__kpis{
+  display:flex;justify-content:center;gap:clamp(28px,5vw,80px);
+  margin:0 auto 80px;flex-wrap:wrap;max-width:1000px;
+}
+.invest__kpi{text-align:center;min-width:140px}
+.invest__kpi .num{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,5vw,68px);line-height:1;color:var(--brass);display:block}
+.invest__kpi .num .unit{font-family:var(--f-mono);font-size:.32em;letter-spacing:.08em;display:inline-block;margin-left:.15em;vertical-align:.7em;color:var(--paper-dim)}
+.invest__kpi .cap{margin-top:14px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--paper-dim)}
+.invest__faq{max-width:780px;margin:0 auto 60px;text-align:left}
+.invest__faq details{
+  border-top:1px solid var(--rule);
+  padding:28px 0;
+}
+.invest__faq details:last-child{border-bottom:1px solid var(--rule)}
+.invest__faq summary{
+  list-style:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  font-family:var(--f-display);font-size:clamp(20px,2.2vw,28px);font-weight:400;color:var(--paper);
+}
+.invest__faq summary::-webkit-details-marker{display:none}
+.invest__faq summary::after{content:"+";font-family:var(--f-mono);font-size:24px;font-weight:300;color:var(--brass);transition:transform var(--t)}
+.invest__faq details[open] summary::after{content:"−"}
+.invest__faq details p{margin-top:20px;color:var(--paper-dim);line-height:1.7;font-size:15.5px}
+.invest__cta{margin-top:20px}
+
+/* ============ STAY ============ */
+.stay{background:var(--bg);text-align:center}
+.stay__inner{max-width:760px;margin:0 auto}
+.stay__claim{font-family:var(--f-italic);font-style:italic;font-size:clamp(22px,2.6vw,32px);line-height:1.5;color:var(--paper);margin-bottom:40px}
+
+/* ============ PARTNERS ============ */
+.partners{background:var(--surface)}
+.partners__inner{max-width:1100px;margin:0 auto}
+.partners__map{
+  background:var(--surface-2);border:1px solid var(--rule);
+  padding:clamp(40px,5vw,72px);text-align:center;margin-bottom:48px;
+}
+.partners__map-title{font-family:var(--f-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);margin-bottom:24px}
+.partners__map svg{max-width:100%;height:auto}
+.partners__map svg .country{fill:var(--surface);stroke:rgba(242,239,232,.18);stroke-width:.5;transition:fill var(--t)}
+.partners__map svg .country.has-agent{fill:var(--brass-soft);stroke:var(--brass)}
+.partners__map svg .country.has-agent:hover{fill:var(--brass);cursor:pointer}
+.partners__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.partner{
+  background:var(--surface-2);border:1px solid var(--rule);
+  padding:32px 28px;display:flex;flex-direction:column;gap:14px;
+}
+.partner__flag{font-family:var(--f-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass)}
+.partner__name{font-family:var(--f-display);font-size:22px;color:var(--paper);font-weight:400}
+.partner__role{font-size:13px;color:var(--paper-dim);line-height:1.5}
+.partner__link{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);border-bottom:1px solid currentColor;padding-bottom:2px;align-self:flex-start;margin-top:4px}
+.partners__cta{text-align:center}
+.partners__cta a{
+  display:inline-block;padding:18px 40px;
+  background:var(--brass);color:var(--bg);
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  transition:opacity var(--t);
+}
+.partners__cta a:hover{opacity:.88}
+@media(max-width:880px){.partners__grid{grid-template-columns:1fr}}
+
+/* ============ ABOUT ============ */
+.about{background:var(--bg)}
+.about__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about__copy h2{font-family:var(--f-display);font-size:clamp(34px,4vw,54px);font-weight:400;line-height:1.1;margin-bottom:28px;color:var(--paper)}
+.about__copy p{color:var(--paper-dim);font-size:16px;line-height:1.75;margin-bottom:18px;max-width:50ch}
+.about__credits{display:flex;gap:40px;margin-top:36px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase}
+.about__credits span{display:flex;flex-direction:column;gap:6px}
+.about__credits span strong{color:var(--brass);font-family:var(--f-display);font-size:18px;font-weight:500;letter-spacing:.05em}
+.about__credits span em{font-style:normal;color:var(--paper-dim);font-size:10px}
+.about__team{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.team-card{background:var(--surface);border:1px solid var(--rule);padding:24px 22px}
+.team-card__name{font-family:var(--f-display);font-size:18px;color:var(--paper);margin-bottom:4px;font-weight:500}
+.team-card__role{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass)}
+@media(max-width:880px){.about__inner{grid-template-columns:1fr;gap:40px}}
+
+/* ============ JOURNAL ============ */
+.journal{background:var(--surface)}
+.journal__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.article{
+  background:var(--surface-2);border:1px solid var(--rule);
+  padding:32px 28px;
+  display:flex;flex-direction:column;gap:14px;
+  transition:border-color var(--t),transform var(--t);
+}
+.article:hover{border-color:var(--brass);transform:translateY(-3px)}
+.article time{font-family:var(--f-mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass)}
+.article h3{font-family:var(--f-display);font-size:20px;font-weight:400;line-height:1.3;color:var(--paper)}
+.article p{font-size:13.5px;color:var(--paper-dim);line-height:1.55}
+@media(max-width:880px){.journal__grid{grid-template-columns:1fr}}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--bg)}
+.contact__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center}
+.contact__photo{position:relative;aspect-ratio:4/5;overflow:hidden}
+.contact__photo img{width:100%;height:100%;object-fit:cover}
+.contact__photo-credit{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(12,20,22,.92) 0%,transparent 100%);padding:32px 24px 20px;color:var(--paper)}
+.contact__photo-credit strong{font-family:var(--f-display);font-size:18px;font-weight:500;display:block}
+.contact__photo-credit span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass);margin-top:4px;display:block}
+.contact__copy h2{font-family:var(--f-display);font-size:clamp(34px,4vw,54px);font-weight:400;line-height:1.1;margin-bottom:28px}
+.contact__copy p{color:var(--paper-dim);font-size:16px;line-height:1.7;margin-bottom:28px}
+.contact__list{list-style:none;display:flex;flex-direction:column;gap:20px;border-top:1px solid var(--rule);padding-top:30px}
+.contact__list li{display:flex;flex-direction:column;gap:6px}
+.contact__list span{font-family:var(--f-mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass)}
+.contact__list a{color:var(--paper);font-size:17px;border-bottom:1px solid transparent;padding-bottom:2px;width:max-content;transition:border-color var(--t)}
+.contact__list a:hover{border-color:var(--brass)}
+@media(max-width:880px){.contact__inner{grid-template-columns:1fr;gap:40px}}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--surface-2);padding:60px var(--pad-x) 36px;border-top:1px solid var(--rule)}
+.footer__inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;font-size:13px;color:var(--paper-dim)}
+.footer__brand{font-family:var(--f-display);font-size:26px;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);margin-bottom:12px}
+.footer__brand-line{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass)}
+.footer__col h4{font-family:var(--f-mono);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);margin-bottom:18px;font-weight:500}
+.footer__col a{display:block;padding:6px 0;color:var(--paper-dim);transition:color var(--t)}
+.footer__col a:hover{color:var(--paper)}
+.footer__bottom{max-width:1200px;margin:48px auto 0;padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap;gap:12px}
+@media(max-width:880px){
+  .footer__inner{grid-template-columns:1fr 1fr;gap:32px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TOP NAV ===== -->
+<nav class="topbar" id="topbar">
+  <a href="#" class="topbar__brand">Ananta</a>
+  <div class="topbar__nav">
+    <a href="#collection">Collection</a>
+    <a href="#invest">Invest</a>
+    <a href="#stay">Stay</a>
+    <a href="#partners">Partners</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#invest" class="topbar__cta">Investor Pack ↓</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <video class="hero__video" src="./hero_bali_sunset.mp4" autoplay muted loop playsinline webkit-playsinline="true" preload="auto"></video>
+  <div class="hero__veil"></div>
+  <div class="hero__inner">
+    <h1 class="hero__wordmark">Ananta</h1>
+    <span class="hero__subline">Boutique Bali</span>
+    <p class="hero__claim">A boutique resort brand in Bali.<br>Built to own. Run to pay.</p>
+    <a href="#collection" class="hero__cta">Explore the collection →</a>
+  </div>
+  <div class="hero__stats">
+    <span><strong>2</strong>Projects</span>
+    <span><strong>44</strong>Units</span>
+    <span><strong>$191k</strong>Entry</span>
+  </div>
+</header>
+
+<!-- ===== BRAND INTRO ===== -->
+<section class="brand">
+  <div class="brand__inner">
+    <div class="eyebrow">The brand</div>
+    <h2>Ananta is a small <em>collection of resort residences</em> on Bali — branded, built, and operated end to end. Owners hold a deed; we run the lobby, the linens, and the books.</h2>
+    <div class="brand__meta">
+      <span><strong>THIERRA</strong><em>Built by</em></span>
+      <span><strong>FIPOX</strong><em>Backed by</em></span>
+      <span><strong>2027</strong><em>First handover</em></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COLLECTION ===== -->
+<section class="collection" id="collection">
+  <div class="section__head">
+    <div class="eyebrow">The collection</div>
+    <h2>Two projects on Bali, two stages</h2>
+    <p>Currently building one. Preparing another. Each Ananta is fully designed, fully managed, fully ours from architecture to morning coffee.</p>
+  </div>
+
+  <!-- PROJECT 01 — IN CONSTRUCTION -->
+  <a class="project" href="https://pauly-ceo.github.io/ananta-villas-assets/" target="_blank" rel="noopener">
+    <div class="project__media">
+      <div class="project__status construction">In construction</div>
+      <img src="https://pauly-ceo.github.io/ananta-villas-assets/render-rooftop.jpg" alt="Ananta Villas Bukit — render" loading="lazy">
+    </div>
+    <div class="project__body">
+      <div class="project__index">N°01 · Bukit</div>
+      <h3 class="project__name">Ananta Villas</h3>
+      <p class="project__lead">Eight private villas on the Bukit cliffs, designed by Studio Identity Designers — one of eight still available.</p>
+      <ul class="project__meta">
+        <li><span>Location</span>Desa Kutuh, Nusa Dua</li>
+        <li><span>Type</span>Private freehold villas</li>
+        <li><span>Inventory</span>1 of 8 remains</li>
+        <li><span>Handover</span>2027</li>
+      </ul>
+      <span class="project__cta">View project →</span>
+    </div>
+  </a>
+
+  <!-- PROJECT 02 — IN PREPARATION -->
+  <a class="project" href="https://pauly-ceo.github.io/ananta-canggu-assets/" target="_blank" rel="noopener">
+    <div class="project__media">
+      <div class="project__status preparation">In preparation</div>
+      <img src="https://pauly-ceo.github.io/ananta-canggu-assets/render-rooftop.jpg" alt="Ananta Canggu — render" loading="lazy">
+    </div>
+    <div class="project__body">
+      <div class="project__index">N°02 · Canggu</div>
+      <h3 class="project__name">Ananta Canggu</h3>
+      <p class="project__lead">Thirty-six branded residences in Padang Linjong — surf to the west, rice fields to the east, our operator on every floor.</p>
+      <ul class="project__meta">
+        <li><span>Location</span>Padang Linjong, Canggu</li>
+        <li><span>Type</span>Branded residences (36 units)</li>
+        <li><span>Entry</span>From $191,000</li>
+        <li><span>Keys</span>Q2 2028</li>
+      </ul>
+      <span class="project__cta">View project →</span>
+    </div>
+  </a>
+</section>
+
+<!-- ===== INVEST ===== -->
+<section class="invest" id="invest">
+  <div class="section__head">
+    <div class="eyebrow">The investment</div>
+    <h2>A second home that pays rent — and holds value</h2>
+    <p>Ananta is built for ownership that earns. Operator-run, end-to-end, with year-round occupancy and a single party accountable for both the asset and the income.</p>
+  </div>
+
+  <div class="invest__kpis">
+    <div class="invest__kpi">
+      <span class="num">9–13<span class="unit">%</span></span>
+      <div class="cap">Net yield, p.a.</div>
+    </div>
+    <div class="invest__kpi">
+      <span class="num">70<span class="unit">%</span></span>
+      <div class="cap">Year-round occupancy</div>
+    </div>
+    <div class="invest__kpi">
+      <span class="num">End–to–end</span>
+      <div class="cap">Operator-run, every unit</div>
+    </div>
+  </div>
+
+  <div class="invest__faq">
+    <details>
+      <summary>Yields, occupancy, and the unit economics</summary>
+      <p>Net yields of 9–13% per annum are modeled at 70% year-round occupancy, with operator fee, OPEX, replacement reserve, and tax already deducted. Distributions are quarterly. We publish a full pro forma per unit on request — written, not whispered.</p>
+    </details>
+    <details>
+      <summary>How a purchase actually works</summary>
+      <p>Four steps: reservation deposit → SPA → milestone payments through construction → handover. Foreign ownership is structured via PT PMA (Canggu, branded residences) or 80-year leasehold with extension (Villas Bukit). Notary, escrow, and tax are arranged by us, paid by you.</p>
+    </details>
+    <details>
+      <summary>Who runs it after you own it</summary>
+      <p>Ananta is operated end-to-end by our in-house team — same brand, same standards across all properties. You can stay any week of the year (subject to booking); the rest of the calendar runs as short-stay rental. One contract, one invoice, one number to call.</p>
+    </details>
+  </div>
+
+  <div class="invest__cta">
+    <a href="#contact" class="hero__cta">Request the investor pack →</a>
+  </div>
+</section>
+
+<!-- ===== STAY ===== -->
+<section class="stay" id="stay">
+  <div class="section__head">
+    <div class="eyebrow">For guests</div>
+    <h2>Stay before you buy</h2>
+  </div>
+  <div class="stay__inner">
+    <p class="stay__claim">Each Ananta is open to short stays — surf weeks at Canggu, cliff hideaways on Bukit. The fastest way to understand an Ananta is to wake up in one.</p>
+    <a href="mailto:kristyna.pauly@thepersonalresorts.com?subject=Ananta%20%E2%80%94%20stay%20enquiry" class="hero__cta">Enquire about a stay →</a>
+  </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners" id="partners">
+  <div class="partners__inner">
+    <div class="section__head">
+      <div class="eyebrow">Our network</div>
+      <h2>Partner agents across Europe and the Gulf</h2>
+      <p>Ananta is sold through a small network of vetted real-estate partners. Live in three markets today — opening another twenty.</p>
+    </div>
+
+    <div class="partners__map">
+      <div class="partners__map-title">Live coverage · 2 markets · expanding</div>
+      <!-- Stylizovaná SVG mapa Evropy + UAE (zjednodušená) -->
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Partner coverage map">
+        <!-- Europe simplified blob -->
+        <path class="country" d="M120,180 L180,150 L260,140 L340,130 L420,140 L480,160 L520,200 L540,250 L520,310 L470,360 L380,390 L290,380 L210,360 L150,310 L120,260 Z"/>
+        <!-- Czech Republic highlighted -->
+        <path class="country has-agent" d="M310,210 L355,205 L370,235 L355,260 L320,265 L300,240 Z"/>
+        <!-- UAE highlighted -->
+        <ellipse class="country has-agent" cx="640" cy="340" rx="38" ry="22"/>
+        <!-- Labels -->
+        <text x="335" y="245" font-family="JetBrains Mono" font-size="10" fill="#C9A87C" text-anchor="middle" letter-spacing="2">CZ</text>
+        <text x="640" y="345" font-family="JetBrains Mono" font-size="10" fill="#C9A87C" text-anchor="middle" letter-spacing="2">UAE</text>
+      </svg>
+    </div>
+
+    <div class="partners__grid">
+      <div class="partner">
+        <div class="partner__flag">Czech Republic · in-house</div>
+        <div class="partner__name">Kristýna Pauly</div>
+        <div class="partner__role">Head of Sales, Ananta. Central Europe, family offices, direct investors.</div>
+        <a href="mailto:kristyna.pauly@thepersonalresorts.com" class="partner__link">kristyna.pauly@…</a>
+      </div>
+      <div class="partner">
+        <div class="partner__flag">Czech Republic · partner</div>
+        <div class="partner__name">M&amp;M Reality</div>
+        <div class="partner__role">Largest residential brokerage in Czechia — 200+ branches, retail and HNW desks.</div>
+        <a href="https://www.mmreality.cz/" target="_blank" rel="noopener" class="partner__link">mmreality.cz →</a>
+      </div>
+      <div class="partner">
+        <div class="partner__flag">UAE · partner</div>
+        <div class="partner__name">Buy Dubai</div>
+        <div class="partner__role">Dubai-based investment brokerage serving CZ/SK clients across the Gulf.</div>
+        <a href="https://www.buydubai.cz/" target="_blank" rel="noopener" class="partner__link">buydubai.cz →</a>
+      </div>
+    </div>
+
+    <div class="partners__cta">
+      <a href="mailto:kristyna.pauly@thepersonalresorts.com?subject=Ananta%20%E2%80%94%20partner%20programme">Become a partner →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="about__inner">
+    <div class="about__copy">
+      <div class="eyebrow">About Ananta</div>
+      <h2>A small brand, built by people who finish what they start.</h2>
+      <p>Ananta was built by the same team behind two decades of residential and resort development across Central Europe and Southeast Asia. We design, build, sell, and operate — one team, one accountability line, no handoffs.</p>
+      <p>The brand is wholly owned and capitalised by FIPOX, a private investment group. Construction is delivered by THIERRA. Operations are in-house under the Ananta name.</p>
+      <div class="about__credits">
+        <span><strong>THIERRA</strong><em>General contractor</em></span>
+        <span><strong>FIPOX</strong><em>Owner &amp; investor</em></span>
+      </div>
+    </div>
+    <div class="about__team">
+      <div class="team-card">
+        <div class="team-card__name">Kristýna Pauly</div>
+        <div class="team-card__role">CEO · Sales &amp; Brand</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__name">Tomáš Vavřík</div>
+        <div class="team-card__role">CEO · Construction</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__name">Jan Pauly</div>
+        <div class="team-card__role">CEO · Investment</div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__name">In-house operator</div>
+        <div class="team-card__role">Property &amp; rental management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JOURNAL ===== -->
+<section class="journal" id="journal">
+  <div class="section__head">
+    <div class="eyebrow">Journal</div>
+    <h2>Notes from the build</h2>
+    <p>Press, podcasts, and progress reports from Bali — and the people behind Ananta.</p>
+  </div>
+  <div class="journal__grid">
+    <a class="article" href="https://www.facebook.com/MyResorts.eu/posts/pfbid0KB1P4EPdjqjxAma4w1Ymbik4TAfiKnhuwutQTtfy2K8rGnakyQ8fgXfEqXoJk656l" target="_blank" rel="noopener">
+      <time>15 June 2026</time>
+      <h3>A report from Bali</h3>
+      <p>Foundations poured at Ananta Villas, model unit framing underway. Pictures and notes from a site visit.</p>
+    </a>
+    <a class="article" href="https://www.newstream.cz/reality/domoplan-hleda-novy-motor-rustu-vedle-bytu-chce-vydelavat-na-resortech" target="_blank" rel="noopener">
+      <time>02 June 2026</time>
+      <h3>Property as a service</h3>
+      <p>Tomáš Vavřík talks Ananta strategy — why a built-to-rent boutique brand makes sense on Bali, on Newstream.</p>
+    </a>
+    <a class="article" href="https://www.newstream.cz/reality/bali-misto-smichova-cesti-investori-kupuji-vily-na-druhem-konci-sveta" target="_blank" rel="noopener">
+      <time>20 May 2026</time>
+      <h3>Czech investors go Bali</h3>
+      <p>The first Bukit villas sold out in weeks. What's next in Indonesia for Ananta and its buyers.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <div class="contact__photo">
+      <img src="./kristyna.jpg" alt="Kristýna Pauly — CEO, Ananta">
+      <div class="contact__photo-credit">
+        <strong>Kristýna Pauly</strong>
+        <span>CEO · Ananta</span>
+      </div>
+    </div>
+    <div class="contact__copy">
+      <div class="eyebrow">Talk to us</div>
+      <h2>Direct line, not a form farm.</h2>
+      <p>Whether you're buying a villa, booking a stay, or partnering as an agent — Kristýna is the first call. Same-day reply, written or live.</p>
+      <ul class="contact__list">
+        <li>
+          <span>Email</span>
+          <a href="mailto:kristyna.pauly@thepersonalresorts.com">kristyna.pauly@thepersonalresorts.com</a>
+        </li>
+        <li>
+          <span>Phone · Whatsapp</span>
+          <a href="tel:+420607207207">+420 607 207 207</a>
+        </li>
+        <li>
+          <span>Office</span>
+          <a href="https://maps.google.com/?q=Kollárova+3150/2,+612+00+Brno" target="_blank" rel="noopener">Kollárova 3150/2 · 612 00 Brno · Czech Republic</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__col">
+      <div class="footer__brand">Ananta</div>
+      <div class="footer__brand-line">A Boutique Resort Brand · Bali</div>
+    </div>
+    <div class="footer__col">
+      <h4>Collection</h4>
+      <a href="https://pauly-ceo.github.io/ananta-villas-assets/" target="_blank">Ananta Villas, Bukit</a>
+      <a href="https://pauly-ceo.github.io/ananta-canggu-assets/" target="_blank">Ananta Canggu</a>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <a href="#about">About</a>
+      <a href="#partners">Partner agents</a>
+      <a href="#journal">Journal</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <a href="mailto:kristyna.pauly@thepersonalresorts.com">Email</a>
+      <a href="tel:+420607207207">+420 607 207 207</a>
+      <a href="https://maps.google.com/?q=Kollárova+3150/2,+612+00+Brno" target="_blank">Brno · CZ</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Ananta · Built by THIERRA · Backed by FIPOX</span>
+    <span>ananta.com</span>
+  </div>
+</footer>
+
+<script>
+// Topbar solid on scroll
+const topbar=document.getElementById('topbar');
+window.addEventListener('scroll',()=>{
+  topbar.classList.toggle('solid',window.scrollY>100);
+},{passive:true});
+
+// Force-play hero video on iOS
+(function(){
+  const v=document.querySelector('.hero__video');
+  if(!v) return;
+  const kick=()=>{try{v.muted=true;const p=v.play();if(p&&p.catch)p.catch(()=>{});}catch(e){}};
+  kick();
+  document.addEventListener('touchstart',kick,{passive:true,once:true});
+  document.addEventListener('scroll',kick,{passive:true,once:true});
+})();
+</script>
+
+</body>
+</html>

@@ -9,22 +9,17 @@
 <link rel="canonical" href="https://ananta.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ananta — A Boutique Resort Brand in Bali">
-<meta property="og:description" content="Built to own. Run to pay. Ananta — boutique resorts on Bali.">
+<meta property="og:description" content="Two projects on Bali — one in construction, one in preparation. Built to own. Run to pay.">
 <meta property="og:image" content="https://ananta.com/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="./Brother%20Signature.otf" as="font" type="font/otf" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-  /* Brother Signature — local. font-display:block = skryje text dokud font nedorazí (vyhne se FOUT swap) */
-  @font-face{
-    font-family:"Brother Signature";
-    src:url("./Brother%20Signature.otf") format("opentype");
-    font-display:block;
-  }
-  /* Hero wordmark — fade-in až po načtení fontu, ne hned na fallbacku */
+  /* Brother Signature removed in v3 — wordmark is now Bodoni Moda sans-serif */
+  /* Hero wordmark fade-in until Bodoni Moda loads */
   .hero__wordmark{opacity:0;transition:opacity .35s ease-out}
   html.fonts-ready .hero__wordmark{opacity:1}
 
@@ -44,7 +39,8 @@
     --blush:#E8D3CE;
     --blush-deep:#D4B5AE;      /* accent pulse */
     --rule:rgba(42,38,32,.14);
-    --f-script:"Brother Signature","Caveat",cursive;
+    --f-bodoni:"Bodoni Moda","Bodoni 72","Didot",serif;
+    --f-script:"Cormorant Garamond","Bodoni Moda","Didot",serif; /* fallback alias, no more script */
     --f-display:"Cormorant Garamond","Didot","Bodoni 72",serif;
     --f-body:"Inter","Söhne",system-ui,-apple-system,sans-serif;
     --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -74,7 +70,7 @@
     transition:background var(--t) var(--ease),color var(--t) var(--ease);
   }
   .topbar.solid{background:var(--paper-warm);color:var(--ink);border-bottom:1px solid var(--rule)}
-  .topbar__brand{font-family:var(--f-script);font-size:26px;line-height:1;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+  .topbar__brand{font-family:var(--f-bodoni);font-weight:500;font-size:22px;line-height:1;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
   .topbar__brand small{font-family:var(--f-mono);font-size:9px;letter-spacing:.22em;opacity:.7;align-self:flex-end;padding-bottom:5px}
   .topbar__nav{display:flex;gap:clamp(36px,4.4vw,72px);align-items:center;font-family:var(--f-body);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:400}
   .topbar__nav a{position:relative;padding:6px 0;opacity:.92}
@@ -87,7 +83,7 @@
   .topbar.solid .topbar__cta:hover{color:var(--paper);background:var(--ink)}
   @media (max-width:880px){
     .topbar__nav{display:none}
-    .topbar__brand{font-size:22px}
+    .topbar__brand{font-size:17px;letter-spacing:.18em}
     .topbar__brand small{display:none}
     .topbar__lang{display:none}
     .topbar{padding:14px 20px}
@@ -108,17 +104,18 @@
   .hero__veil{position:fixed;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.05) 30%,rgba(0,0,0,.55) 100%);pointer-events:none}
   .hero__inner{position:relative;z-index:2;padding:0 var(--pad-x);text-align:center;display:flex;flex-direction:column;align-items:center;gap:28px;margin-top:-4vh}
   .hero__wordmark{
-    font-family:var(--f-script);
+    font-family:var(--f-bodoni);
     font-weight:400;
-    font-size:min(7.2vw,140px);
-    line-height:1;
-    letter-spacing:.005em;
-    text-shadow:0 2px 40px rgba(0,0,0,.4);
+    font-size:clamp(64px,11vw,180px);
+    line-height:.95;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    text-shadow:0 2px 40px rgba(0,0,0,.45);
     color:#fff;
     margin:0;
     white-space:nowrap;
   }
-  @media(max-width:480px){.hero__wordmark{font-size:6.5vw}}
+  @media(max-width:480px){.hero__wordmark{font-size:13vw;letter-spacing:.08em}}
   .hero__reg{
     font-family:var(--f-mono);font-size:11px;letter-spacing:.42em;opacity:.85;
     padding-top:14px;border-top:1px solid rgba(255,255,255,.55);
@@ -485,6 +482,32 @@
   .footer__col a{display:block;padding:3px 0;color:rgba(255,255,255,.8)}
   .footer__col a:hover{color:#fff}
   .footer__base{max-width:1280px;margin:0 auto;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:var(--f-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+  /* INVEST + STAY blocks */
+  .invest-block{background:var(--paper-warm);padding:clamp(96px,12vw,160px) var(--pad-x);text-align:center;color:var(--ink)}
+  .invest-block__inner{max-width:900px;margin:0 auto}
+  .invest-block h2{font-family:var(--f-display);font-weight:300;font-size:clamp(34px,4.4vw,58px);line-height:1.1;color:var(--ink);margin:18px 0 24px}
+  .invest-block__lead{font-size:17px;line-height:1.7;color:var(--driftwood);max-width:62ch;margin:0 auto 56px}
+  .invest-block__kpis{display:flex;justify-content:center;gap:clamp(28px,5vw,80px);margin:0 auto 64px;flex-wrap:wrap}
+  .invest-block__kpi{text-align:center;min-width:140px;display:flex;flex-direction:column;gap:10px}
+  .invest-block__kpi .num{font-family:var(--f-display);font-weight:300;font-style:italic;font-size:clamp(38px,4.6vw,62px);line-height:1;letter-spacing:-.02em;color:var(--slate)}
+  .invest-block__kpi .num small{font-family:var(--f-mono);font-size:.32em;letter-spacing:.08em;display:inline-block;margin-left:.1em;vertical-align:.6em;color:var(--driftwood);font-style:normal}
+  .invest-block__kpi .cap{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--driftwood)}
+  .invest-block__faq{border-top:1px solid var(--rule);padding:24px 0;text-align:left;max-width:680px;margin:0 auto}
+  .invest-block__faq:last-of-type{border-bottom:1px solid var(--rule)}
+  .invest-block__faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;font-family:var(--f-display);font-weight:400;font-size:clamp(18px,2vw,24px);color:var(--ink)}
+  .invest-block__faq summary::-webkit-details-marker{display:none}
+  .invest-block__faq summary::after{content:"+";font-family:var(--f-mono);font-size:22px;font-weight:300;color:var(--slate);transition:transform var(--t)}
+  .invest-block__faq[open] summary::after{content:"−"}
+  .invest-block__faq p{margin-top:18px;color:var(--driftwood);line-height:1.7;font-size:15px}
+  .invest-block__cta{display:inline-block;margin-top:48px;padding:16px 36px;border:1px solid var(--ink);color:var(--ink);font-family:var(--f-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;transition:background var(--t),color var(--t)}
+  .invest-block__cta:hover{background:var(--ink);color:var(--paper)}
+  
+  .stay-block{background:var(--blush);padding:clamp(96px,12vw,160px) var(--pad-x);text-align:center;color:var(--ink)}
+  .stay-block__inner{max-width:680px;margin:0 auto}
+  .stay-block h2{font-family:var(--f-display);font-weight:300;font-size:clamp(34px,4.4vw,58px);line-height:1.1;color:var(--ink);margin:18px 0 24px}
+  .stay-block p{font-size:17px;line-height:1.7;color:var(--ink);opacity:.85;max-width:48ch;margin:0 auto 8px}
+
 </style>
 </head>
 <body>
@@ -493,10 +516,12 @@
 <nav class="topbar" id="topbar">
   <a href="#" class="topbar__brand">Ananta <small>· BOUTIQUE BALI</small></a>
   <div class="topbar__nav">
-    <a href="#collection">Collection</a>
+    <a href="#in-construction">In Construction</a>
+    <a href="#in-preparation">In Preparation</a>
+    <a href="#invest">Invest</a>
+    <a href="#stay">Stay</a>
     <a href="#partners">Partners</a>
     <a href="#about">About</a>
-    <a href="#journal">Journal</a>
   </div>
   <div style="display:flex;gap:18px;align-items:center">
     <span class="topbar__lang">EN&nbsp;·&nbsp;<a href="#" style="opacity:.5">CS</a></span>
@@ -533,19 +558,7 @@
 </section>
 
 <!-- COLLECTION SEASON -->
-<!-- BUILD STAGE LEAD-IN -->
-<section class="season season--summer">
-  <div class="season__sticky">
-    <video class="season__bg" id="tropicsBg" src="./hero_bali_beach.mp4" autoplay muted loop playsinline preload="metadata"></video>
-    <div class="season__veil"></div>
-    <div class="season__title">
-      <div class="season__kicker">The collection · 2026</div>
-      <h2>Two projects on Bali.</h2>
-    </div>
-  </div>
-</section>
 
-<!-- SUMMER SEASON --><!-- (placeholder so summer block parser stays consistent) -->
 <section class="season season--summer">
   <div class="season__sticky">
     <video class="season__bg" id="summerBg" src="./web_bali_beach_sunset.mp4" autoplay muted loop playsinline preload="metadata"></video>
@@ -562,7 +575,7 @@
   <div class="projects__grid">
     <a class="card" href="https://pauly-ceo.github.io/ananta-villas-assets/">
       <div class="card__media">
-        <div class="card__status selling">1 villa remains</div>
+        <div class="card__status selling">In construction</div>
         <img src="https://www.myresorts.eu/upItems/imgs/mnlt_25_123_FPX_251029_cam_lehkost_FINAL_wide_0002.jpg" alt="Ananta Villas" loading="lazy">
       </div>
       <div class="card__overlays">
@@ -580,9 +593,10 @@
         </ul>
       </div>
     </a>
+    <div id="in-preparation" style="position:absolute;top:-60px"></div>
     <a class="card" href="https://pauly-ceo.github.io/ananta-canggu-assets/">
       <div class="card__media">
-        <div class="card__status selling">Selling Now</div>
+        <div class="card__status selling">In preparation</div>
         <img src="https://pauly-ceo.github.io/ananta-canggu-assets/render-rooftop.jpg" alt="Ananta Canggu" loading="lazy">
       </div>
       <div class="card__overlays">
@@ -603,6 +617,43 @@
     </div>
 </section>
 
+
+<!-- INVEST -->
+<section class="invest-block" id="invest">
+  <div class="invest-block__inner">
+    <div class="eyebrow">For investors</div>
+    <h2>A second home that pays rent — and holds value.</h2>
+    <p class="invest-block__lead">Ananta is built for ownership that earns. Operator-run end to end, with year-round occupancy and a single party accountable for both the asset and the income.</p>
+    <div class="invest-block__kpis">
+      <div class="invest-block__kpi"><span class="num">9–13<small>%</small></span><span class="cap">Net yield, p.a.</span></div>
+      <div class="invest-block__kpi"><span class="num">70<small>%</small></span><span class="cap">Year-round occupancy</span></div>
+      <div class="invest-block__kpi"><span class="num">End–to–end</span><span class="cap">Operator-run, every unit</span></div>
+    </div>
+    <details class="invest-block__faq">
+      <summary>Yields, occupancy and unit economics</summary>
+      <p>Net yields of 9–13% p.a. are modeled at 70% year-round occupancy, with operator fee, OPEX, replacement reserve and tax already deducted. Distributions quarterly. Full pro forma per unit on request.</p>
+    </details>
+    <details class="invest-block__faq">
+      <summary>How a purchase actually works</summary>
+      <p>Reservation → SPA → milestone payments through construction → handover. Foreign ownership via PT PMA (Canggu, branded residences) or 80-year leasehold with extension (Villas Bukit). Notary, escrow, tax arranged by us, paid by you.</p>
+    </details>
+    <details class="invest-block__faq">
+      <summary>Who runs it after you own it</summary>
+      <p>Ananta is operated end-to-end by our in-house team — same brand, same standards. You stay any week of the year (subject to booking); the rest runs as short-stay rental. One contract, one invoice, one number.</p>
+    </details>
+    <a href="#contact" class="invest-block__cta">Request investor pack →</a>
+  </div>
+</section>
+
+<!-- STAY -->
+<section class="stay-block" id="stay">
+  <div class="stay-block__inner">
+    <div class="eyebrow">For guests</div>
+    <h2>Stay before you buy.</h2>
+    <p>Each Ananta is open to short stays — surf weeks at Canggu, cliff hideaways on Bukit. The fastest way to understand an Ananta is to wake up in one.</p>
+    <a href="mailto:kristyna.pauly@thepersonalresorts.com?subject=Ananta%20%E2%80%94%20stay%20enquiry" class="invest-block__cta">Enquire about a stay →</a>
+  </div>
+</section>
 
 <!-- WHY / THREE VOWS — now right after Method -->
 <section class="why" id="about">

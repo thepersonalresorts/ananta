@@ -721,6 +721,101 @@
   .quiz__result strong{color:var(--ink);font-family:var(--f-display);font-style:italic;font-weight:400;font-size:18px}
   .quiz__result-cta{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid currentColor;padding-bottom:2px;align-self:flex-start;text-decoration:none}
 
+  /* ============================================================
+     MOBILE RESPONSIVENESS — targeted fallbacks for new Invest blocks
+     L2 pillars, L3 statement, L10 rhythms, L12 quiz, L13 pipeline,
+     L14 vel-ticker, L15 portal — and shared overflow guards.
+     ============================================================ */
+  html,body{overflow-x:hidden}
+  img,svg,video{max-width:100%}
+
+  @media (max-width:760px){
+    /* KPI strip — three big numbers stack 1-col on narrow screens */
+    .invest-block__kpis{flex-direction:column;gap:28px;margin-bottom:48px}
+    .invest-block__kpi{min-width:0;width:100%}
+    .invest-block__kpi .num{font-size:clamp(34px,9vw,48px)}
+    .invest-block__kpi .cap{letter-spacing:.24em;font-size:10px}
+
+    /* L2 — Tenant pillars (inside tandem visual) */
+    .pillar__body{padding-left:0;font-size:13.5px}
+    .pillar__head{gap:10px;margin-bottom:6px}
+    .pillar__num,.pillar__title{font-size:10.5px;letter-spacing:.18em}
+
+    /* L3 — Monthly statement mockup: shrink so $XX,XXX rows don't break */
+    .statement{font-size:12px;line-height:1.7}
+    .statement__line .k{font-size:11.5px}
+    .statement__line .v{font-size:12px}
+    .statement__line.is-net{padding:6px;margin:0 -6px}
+    .statement__line.is-net .k{font-size:10.5px}
+    .statement__hd{font-size:10px;letter-spacing:.18em;margin-bottom:10px}
+    .statement__foot{font-size:10.5px}
+
+    /* L15 — Owner portal — bar chart shorter, KPI values smaller */
+    .portal{padding:14px;gap:12px}
+    .portal__bar{font-size:9.5px;letter-spacing:.14em;flex-wrap:wrap;gap:6px}
+    .portal__kpi .val{font-size:18px}
+    .portal__bars{height:56px;gap:4px}
+    .portal__chart-lbl{font-size:9px;letter-spacing:.18em}
+    .portal__xax{font-size:8.5px}
+
+    /* L13 — Pipeline teaser — trim padding inside the parent invest-block */
+    .pipeline{padding:clamp(48px,9vw,80px) 0}
+    .pipeline__title{font-size:clamp(30px,8vw,44px)}
+    .pipeline__body{font-size:15px;line-height:1.65}
+
+    /* L12 — Match quiz — option buttons readable, full-row chips */
+    .quiz{gap:18px}
+    .quiz__opts{gap:6px}
+    .quiz__opt{font-size:10.5px;padding:9px 12px;letter-spacing:.12em;flex:1 0 calc(50% - 6px);text-align:center;min-width:0}
+    .quiz__result{font-size:13.5px;padding:16px 14px}
+    .quiz__result strong{font-size:16.5px}
+
+    /* L5 — FAQ summary: tighter gap so long titles don't wrap weirdly */
+    .invest-block__faq{padding:20px 0}
+    .invest-block__faq summary{gap:14px;font-size:17px}
+    .invest-block__faq p{font-size:14px}
+
+    /* Invest section vertical padding — give content room to breathe */
+    .invest-block{padding:clamp(56px,10vw,96px) var(--pad-x)}
+    .invest-block__lead{font-size:15.5px;margin-bottom:40px}
+
+    /* Calculator value column readability — keep large $ numbers from wrapping */
+    .invest-tool__stat{flex-wrap:wrap;gap:6px 14px}
+    .invest-tool__stat .k{max-width:none;font-size:10px;letter-spacing:.2em}
+    .invest-tool__stat .v{font-size:22px;text-align:left}
+    .invest-tool__col-controls .ctrl-val{font-size:18px;min-width:0}
+    .invest-tool__col-controls .ctrl-lbl{font-size:10px;letter-spacing:.2em}
+
+    /* Tandem story title — slightly tighter on small screens */
+    .invest-tandem__title{font-size:clamp(26px,7vw,34px);line-height:1.18;margin-bottom:14px}
+    .invest-tandem__story p{font-size:14.5px;line-height:1.6}
+    .invest-tandem__visual-title{font-size:9.5px;letter-spacing:.2em}
+
+    /* Tandem 1 ROI chart — let SVG breathe but stay readable */
+    .invest-tandem__visual svg{max-width:100%;height:auto}
+
+    /* Manifesto — reduce massive type on tiny screens */
+    .manifesto{padding:clamp(64px,12vw,120px) var(--pad-x)}
+  }
+
+  @media (max-width:380px){
+    /* Extra narrow (Android ~360px) — guard against the last bits of overflow */
+    .invest-block__kpi .num{font-size:32px;letter-spacing:-.01em}
+    .invest-block__kpi .num small{font-size:.45em}
+    .statement{font-size:11px}
+    .statement__line .v{font-size:11px}
+    .statement__line.is-net .v{font-size:12px}
+    .invest-tool__stat .v{font-size:20px}
+    .quiz__opt{flex:1 1 100%}
+    .pillar__head{flex-wrap:wrap}
+    .portal__bar{font-size:9px;letter-spacing:.1em}
+    .portal__bar strong{letter-spacing:.16em}
+    .vel-ticker{font-size:9px;letter-spacing:.12em;gap:10px}
+    .invest-tandem__title{font-size:24px}
+    .invest-tool__col-controls .ctrl-val{font-size:16px}
+    .invest-tool__col-output{padding-top:24px}
+  }
+
 </style>
 </head>
 <body>

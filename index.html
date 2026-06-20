@@ -1114,23 +1114,8 @@
     cards.forEach(c=>io.observe(c));
   })();
 
-  // Parallax season video backgrounds — subtle scale-zoom while in viewport
+  // Ensure videos start playing (mobile sometimes needs nudge)
   (function(){
-    const winterBg=document.getElementById('winterBg');
-    const summerBg=document.getElementById('summerBg');
-    function update(){
-      const wRect=document.querySelector('.season--winter').getBoundingClientRect();
-      const sRect=document.querySelector('.season--summer').getBoundingClientRect();
-      // Small parallax: counter-translate ~20% of section scroll
-      const wY=wRect.top*-.18;
-      const sY=sRect.top*-.18;
-      winterBg.style.transform=`translate3d(0,${wY}px,0) scale(1.08)`;
-      summerBg.style.transform=`translate3d(0,${sY}px,0) scale(1.08)`;
-    }
-    update();
-    window.addEventListener('scroll',update,{passive:true});
-    window.addEventListener('resize',update,{passive:true});
-    // Ensure videos start playing (mobile sometimes needs nudge)
     document.querySelectorAll('video').forEach(v=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});});
   })();
 

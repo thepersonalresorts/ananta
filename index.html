@@ -816,6 +816,15 @@
     .invest-tool__col-output{padding-top:24px}
   }
 
+
+  /* Overlay images progressive reveal on scroll (fix v3.16) */
+  .card__overlay-img{
+    opacity:0;
+    transform:translateY(56px);
+    transition:opacity .9s var(--ease), transform 1.1s var(--ease);
+    will-change:opacity, transform;
+  }
+  .card__overlay-img.is-in{opacity:1;transform:none}
 </style>
 </head>
 <body>
@@ -1748,6 +1757,29 @@
           '<a class="quiz__result-cta" href="https://pauly-ceo.github.io/ananta-canggu-assets/" target="_blank" rel="noopener">See Canggu →</a>';
       }
     }
+  })();
+</script>
+
+<script>(function(){ /* v3.16 overlay reveal */ })();</script>
+<script>
+
+  /* Overlay-img progressive reveal (fix v3.16) */
+  (function(){
+    const imgs = document.querySelectorAll('.card__overlay-img');
+    if (!imgs.length) return;
+    if (!('IntersectionObserver' in window)) {
+      imgs.forEach(i => i.classList.add('is-in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+    imgs.forEach(i => io.observe(i));
   })();
 </script>
 </body>

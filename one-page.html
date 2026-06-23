@@ -2981,6 +2981,8 @@
 </footer>
 
 <script>
+(function(){
+
   // Font loading: signal until Brother Signature is loaded (vyhne se FOUT na hero wordmarku)
   (function(){
     const ready=()=>document.documentElement.classList.add('fonts-ready');
@@ -3284,9 +3286,13 @@
       }
     }
   })();
+
+})();
 </script>
 
 <script>
+(function(){
+
 
 const isMobile = window.matchMedia('(max-width:768px)').matches || window.matchMedia('(hover:none)').matches || window.matchMedia('(pointer:coarse)').matches;
 const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -3306,8 +3312,12 @@ if(!isMobile && !prefersReduce && 'IntersectionObserver' in window){
   reveals.forEach(r=> io.observe(r));
 } else { reveals.forEach(r=> r.classList.add('in')); }
 
+
+})();
 </script>
 <script>
+(function(){
+
 
 const isMobile = window.matchMedia('(max-width:768px)').matches || window.matchMedia('(hover:none)').matches || window.matchMedia('(pointer:coarse)').matches;
 const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -3347,6 +3357,8 @@ packF.addEventListener('submit', async (e)=>{
   packSuccess.style.display='block';
 });
 
+
+})();
 </script>
 </body>
 </html>

@@ -101,7 +101,7 @@
   }
   .hero__rotation video.is-active{opacity:1}
   .hero{position:relative;height:100vh;min-height:580px;color:var(--paper);display:flex;flex-direction:column;justify-content:center;z-index:1}
-  .hero__veil{position:fixed;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.05) 30%,rgba(0,0,0,.55) 100%);pointer-events:none}
+  .hero__veil{position:fixed;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,rgba(0,0,0,.0) 30%,rgba(0,0,0,.32) 100%);pointer-events:none}
   .hero__inner{position:relative;z-index:2;padding:0 var(--pad-x);text-align:center;display:flex;flex-direction:column;align-items:center;gap:28px;margin-top:-4vh}
   .hero__wordmark{
     font-family:var(--f-bodoni);
@@ -126,7 +126,7 @@
 
   /* PROLOG — hero video continues behind, white text over it */
   .prolog{padding:clamp(96px,12vw,180px) var(--pad-x);text-align:center;color:#fff;position:relative}
-  .prolog::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.28) 50%,rgba(0,0,0,.42));z-index:-1}
+  .prolog::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.14) 50%,rgba(0,0,0,.26));z-index:-1}
   .prolog > *{max-width:1080px;margin-left:auto;margin-right:auto;position:relative}
   .prolog .eyebrow{color:var(--blush)}
   .prolog h2{
@@ -202,7 +202,7 @@
   }
   .card__media::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(9,29,30,.08) 0%,rgba(9,29,30,.2) 50%,rgba(9,29,30,.78) 100%);
+    background:linear-gradient(180deg,rgba(9,29,30,.04) 0%,rgba(9,29,30,.10) 50%,rgba(9,29,30,.48) 100%);
   }
 
   /* Layer 2: Scrolling overlay images — float past BG */
@@ -251,7 +251,7 @@
     padding:clamp(36px,5vw,72px) clamp(36px,5vw,80px) clamp(36px,5vw,64px);
     display:grid;grid-template-columns:minmax(280px,1.4fr) 1fr 1fr 1fr 1fr;gap:clamp(24px,3vw,48px);align-items:end;
     color:var(--paper);
-    background:linear-gradient(180deg,transparent 0%,rgba(9,29,30,.8) 50%,rgba(9,29,30,.95) 100%);
+    background:linear-gradient(180deg,transparent 0%,rgba(9,29,30,.55) 50%,rgba(9,29,30,.82) 100%);
     z-index:3;pointer-events:none;
     min-height:34vh;
   }
@@ -935,7 +935,7 @@
     <h2>A second home that pays rent — and holds value.</h2>
     <p class="invest-block__lead">Ananta is built for ownership that earns. Operator-run end to end, with year-round occupancy and a single party accountable for both the asset and the income.</p>
     <div class="invest-block__kpis">
-      <div class="invest-block__kpi"><span class="num">9–13<small>%</small></span><span class="cap">Net yield, p.a.</span></div>
+      <div class="invest-block__kpi"><span class="num">9–13<small>%</small></span><span class="cap">Targeted net yield, p.a.</span></div>
       <div class="invest-block__kpi"><span class="num">70<small>%</small></span><span class="cap">Year-round occupancy</span></div>
       <div class="invest-block__kpi"><span class="num">End–to–end</span><span class="cap">Operator-run, every unit</span></div>
     </div>
@@ -1090,7 +1090,7 @@
       <div class="invest-tandem__story">
         <div class="eyebrow">No fine print</div>
         <h3 class="invest-tandem__title">Where the money <em>goes</em> first.</h3>
-        <p>We promise 9–13 % net. Here's the part most operators leave out — what comes off the top before yield reaches you. Hover any segment for the why.</p>
+        <p>Targeted net yield 9–13 % p.a. Here's the part most operators leave out — what comes off the top before the distribution reaches you. Hover any segment for the why. Projections, not guarantees.</p>
         <p class="invest-tandem__source">Approximate splits at unit level; full per-unit pro forma on request. Pooled rental, conservative ADR for the premium Canggu segment, 70 % year-round occupancy.</p>
       </div>
       <div class="invest-tandem__visual">
@@ -1104,7 +1104,7 @@
           <div class="wf-row" data-tip="Utilities, pool, gardens, consumables, insurance, daily property OPEX."><span class="wf-lbl">− OPEX</span><div class="wf-bar" style="width:68%;background:#7A8B91"><span class="wf-val">68 %</span></div></div>
           <div class="wf-row" data-tip="Periodic refresh, FF&E replacement, soft-good cycle. So your unit still rents like new in year ten."><span class="wf-lbl">− Reserve</span><div class="wf-bar" style="width:65%;background:#9F8B6B"><span class="wf-val">65 %</span></div></div>
           <div class="wf-row" data-tip="Indonesian withholding tax on rental income (10 %), paid at source by the operator."><span class="wf-lbl">− Tax (ID)</span><div class="wf-bar" style="width:58%;background:#B8A88F"><span class="wf-val">58 %</span></div></div>
-          <div class="wf-row wf-row--net" data-tip="Distributed quarterly to the owner. Equivalent to 9–13 % net yield on the entry price at 70 % occupancy."><span class="wf-lbl">= Net to you</span><div class="wf-bar" style="width:55%;background:#C9A87C"><span class="wf-val">~ 55–58 %</span></div></div>
+          <div class="wf-row wf-row--net" data-tip="Distributed quarterly to the owner. Equivalent to a targeted 9–13 % net yield on the entry price at 70 % occupancy. Projected, not guaranteed."><span class="wf-lbl">= Net to you</span><div class="wf-bar" style="width:55%;background:#C9A87C"><span class="wf-val">~ 55–58 %</span></div></div>
         </div>
         <div class="invest-tandem__visual-foot">
           <span id="wfTip">Hover any row to see what that line covers.</span>
@@ -1350,7 +1350,7 @@
       <div class="partner-row">
         <div class="partner-row__flag">CZ · in-house</div>
         <div class="partner-row__name">Kristýna Pauly</div>
-        <div class="partner-row__role">Head of Sales — Central Europe, family offices, direct investors.</div>
+        <div class="partner-row__role">CEO — Central Europe, family offices, direct investors.</div>
         <a href="mailto:kristyna.pauly@thepersonalresorts.com" class="partner-row__link">Email →</a>
       </div>
       <div class="partner-row">

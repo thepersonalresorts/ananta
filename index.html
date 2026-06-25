@@ -101,7 +101,7 @@
   }
   .hero__rotation video.is-active{opacity:1}
   .hero{position:relative;height:100vh;min-height:580px;color:var(--paper);display:flex;flex-direction:column;justify-content:center;z-index:1}
-  .hero__veil{position:fixed;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,rgba(0,0,0,.0) 30%,rgba(0,0,0,.32) 100%);pointer-events:none}
+  .hero__veil{position:fixed;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.05) 30%,rgba(0,0,0,.55) 100%);pointer-events:none}
   .hero__inner{position:relative;z-index:2;padding:0 var(--pad-x);text-align:center;display:flex;flex-direction:column;align-items:center;gap:28px;margin-top:-4vh}
   .hero__wordmark{
     font-family:var(--f-bodoni);
@@ -126,7 +126,7 @@
 
   /* PROLOG — hero video continues behind, white text over it */
   .prolog{padding:clamp(96px,12vw,180px) var(--pad-x);text-align:center;color:#fff;position:relative}
-  .prolog::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.14) 50%,rgba(0,0,0,.26));z-index:-1}
+  .prolog::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.28) 50%,rgba(0,0,0,.42));z-index:-1}
   .prolog > *{max-width:1080px;margin-left:auto;margin-right:auto;position:relative}
   .prolog .eyebrow{color:var(--blush)}
   .prolog h2{
@@ -179,58 +179,13 @@
   .projects__sticky-bg{display:none}
   .projects__grid{margin:0;padding:0;display:flex;flex-direction:column;gap:0}
 
-  /* PROJECT CARDS — clean editorial (v4 rebuild, no sticky) */
-  .projects{padding:0;background:var(--paper-warm);color:var(--ink)}
-  .projects__grid{display:flex;flex-direction:column;gap:0}
-
-  .pcard{display:block;color:inherit;text-decoration:none;background:var(--paper-warm)}
-  .pcard + .pcard{border-top:1px solid var(--rule)}
-
-  .pcard__hero{position:relative;height:88vh;min-height:560px;overflow:hidden;background:#091D1E}
-  .pcard__hero > img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
-  .pcard:hover .pcard__hero > img{transform:scale(1.03)}
-  .pcard__hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 100%);pointer-events:none}
-
-  .pcard__status{position:absolute;top:clamp(28px,3vw,44px);left:clamp(28px,3vw,44px);z-index:3;display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#fff;padding:8px 14px 8px 12px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px)}
-  .pcard__status::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff}
-  .pcard__status.selling{background:rgba(94,108,116,.92)}
-  .pcard__status.selling::before{background:var(--blush-deep);animation:pulse 1.8s ease-in-out infinite}
-  .pcard__status.prelaunch{background:rgba(143,132,118,.92)}
-  .pcard__status.prelaunch::before{background:var(--blush)}
-  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(212,181,174,.7);transform:scale(1)}50%{box-shadow:0 0 0 6px rgba(212,181,174,0);transform:scale(1.18)}}
-
-  .pcard__overlay{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(32px,5vw,80px) clamp(28px,4vw,72px) clamp(32px,4vw,56px);color:#fff}
-  .pcard__name{font-family:var(--f-display);font-weight:300;font-size:clamp(48px,7vw,108px);line-height:.95;letter-spacing:-.015em;margin:0 0 14px;color:#fff}
-  .pcard__name em{font-style:italic;color:rgba(255,255,255,.78)}
-  .pcard__meta{display:flex;flex-wrap:wrap;gap:10px 28px;list-style:none;padding:0;margin:0;font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.78)}
-  .pcard__meta li{position:relative}
-  .pcard__meta li + li::before{content:"·";position:absolute;left:-18px;top:0;color:rgba(255,255,255,.5)}
-
-  .pcard__ed{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(40px,6vw,96px);padding:clamp(64px,8vw,120px) clamp(28px,5vw,80px);align-items:start}
-  .pcard__copy .eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--driftwood);display:block;margin-bottom:24px}
-  .pcard__copy h3{font-family:var(--f-display);font-weight:300;font-size:clamp(28px,3.6vw,48px);line-height:1.05;letter-spacing:-.01em;color:var(--ink);margin:0 0 22px}
-  .pcard__copy h3 em{font-style:italic;color:var(--slate)}
-  .pcard__copy p{font-size:16px;line-height:1.7;color:var(--ink-soft);max-width:520px}
-  .pcard__copy p + p{margin-top:14px}
-  .pcard__cta{display:inline-flex;align-items:center;gap:14px;margin-top:32px;font-family:var(--f-mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:6px;transition:gap .3s var(--ease)}
-  .pcard:hover .pcard__cta{gap:22px}
-
-  .pcard__gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,20px)}
-  .pcard__gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--pearl)}
-
-  @media (max-width:860px){
-    .pcard__hero{height:70vh;min-height:480px}
-    .pcard__name{font-size:clamp(38px,9vw,68px)}
-    .pcard__ed{grid-template-columns:1fr;gap:40px;padding:48px 22px}
-  }
-
   /* CARD — HBA pattern: sticky BG + sticky title + scrolling overlay images */
   .card{
     position:relative;display:block;
     height:220vh; /* total scroll length per project */
     background:#091D1E;
     text-decoration:none;color:var(--paper);
-    overflow:clip; /* v3.16e — clip sticky children at card boundary (prevents overlap with next card) */
+    overflow:visible;
   }
   /* Status badge top of card */
 
@@ -247,7 +202,7 @@
   }
   .card__media::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(9,29,30,.04) 0%,rgba(9,29,30,.10) 50%,rgba(9,29,30,.48) 100%);
+    background:linear-gradient(180deg,rgba(9,29,30,.08) 0%,rgba(9,29,30,.2) 50%,rgba(9,29,30,.78) 100%);
   }
 
   /* Layer 2: Scrolling overlay images — float past BG */
@@ -296,7 +251,7 @@
     padding:clamp(36px,5vw,72px) clamp(36px,5vw,80px) clamp(36px,5vw,64px);
     display:grid;grid-template-columns:minmax(280px,1.4fr) 1fr 1fr 1fr 1fr;gap:clamp(24px,3vw,48px);align-items:end;
     color:var(--paper);
-    background:linear-gradient(180deg,transparent 0%,rgba(9,29,30,.55) 50%,rgba(9,29,30,.82) 100%);
+    background:linear-gradient(180deg,transparent 0%,rgba(9,29,30,.8) 50%,rgba(9,29,30,.95) 100%);
     z-index:3;pointer-events:none;
     min-height:34vh;
   }
@@ -924,70 +879,52 @@
 
 <!-- season summer header removed v3.16c -->
 
-<!-- PROJECTS — clean editorial (v4 rebuild) -->
 <section class="projects" id="summerProjects">
-  <div id="in-construction" style="scroll-margin-top:100px"></div>
-
-  <a class="pcard" href="https://pauly-ceo.github.io/ananta-villas-assets/">
-    <div class="pcard__hero">
-      <img src="https://www.myresorts.eu/upItems/imgs/mnlt_25_123_FPX_251029_cam_lehkost_FINAL_wide_0002.jpg" alt="Ananta Villas — Bukit, Bali" loading="lazy">
-      <div class="pcard__status selling">In construction</div>
-      <div class="pcard__overlay">
-        <h3 class="pcard__name">Ananta <em>Villas</em></h3>
-        <ul class="pcard__meta">
-          <li>Desa Kutuh &middot; Nusa Dua &middot; Bali</li>
-          <li>8 private villas &middot; cliff front</li>
-          <li>1 of 8 remains</li>
-          <li>Handover Q3 2027</li>
+  <video class="projects__sticky-bg" src="./hero_bali_beach.mp4" autoplay muted loop playsinline preload="metadata"></video>
+  <div class="projects__grid">
+    <div id="in-construction" style="scroll-margin-top:100px"></div>
+    <a class="card" href="https://pauly-ceo.github.io/ananta-villas-assets/">
+      <div class="card__media">
+        <div class="card__status selling">In construction</div>
+        <img src="https://www.myresorts.eu/upItems/imgs/mnlt_25_123_FPX_251029_cam_lehkost_FINAL_wide_0002.jpg" alt="Ananta Villas" loading="lazy">
+      </div>
+      <div class="card__overlays">
+        <img class="card__overlay-img" src="https://www.myresorts.eu/upItems/imgs/001/mnlt_25_123_FPX_251029_cam_jungle_FINAL_wide.jpg" alt="Ananta Villas detail" loading="lazy">
+        <img class="card__overlay-img" src="https://www.myresorts.eu/upItems/imgs/001/mnlt_25_123_FPX_251029_cam_relax_FINAL_wide.jpg" alt="Ananta Villas detail" loading="lazy">
+      </div>
+      <div class="card__body">
+        <div class="card__title-block"><h3 class="card__name">Ananta Villas</h3><span class="card__cta-pill">View project</span></div>
+        <ul class="card__meta">
+          <li>Studio Identity Designers</li>
+          <li>Private villas · cliff front</li>
+          <li>Desa Kutuh · Nusa Dua · Bali</li>
+          <li>1 of 8 remains · 2027 handover</li>
+          <li class="card__cta"><span>View project</span></li>
         </ul>
       </div>
-    </div>
-    <div class="pcard__ed">
-      <div class="pcard__copy">
-        <div class="eyebrow">Chapter I &middot; In construction</div>
-        <h3>A quiet corner <em>of Nusa Dua.</em></h3>
-        <p>Eight private villas in Desa Kutuh &mdash; the unhurried south of Bali. Cliff-front, walled, designed by Studio Identity Designers. Built by THIERRA. Run as part of the Ananta hospitality system.</p>
-        <p>Twenty minutes to Ngurah Rai. Ten to Uluwatu. The same hill as Aman and the upcoming Mandarin Oriental.</p>
-        <span class="pcard__cta">View project &nearr;</span>
+    </a>
+    <div id="in-preparation" style="scroll-margin-top:100px"></div>
+    <a class="card" href="https://pauly-ceo.github.io/ananta-canggu-assets/">
+      <div class="card__media">
+        <div class="card__status prelaunch">In preparation</div>
+        <img src="https://pauly-ceo.github.io/ananta-canggu-assets/render-rooftop.jpg" alt="Ananta Canggu" loading="lazy">
       </div>
-      <div class="pcard__gallery">
-        <img src="https://www.myresorts.eu/upItems/imgs/001/mnlt_25_123_FPX_251029_cam_jungle_FINAL_wide.jpg" alt="Ananta Villas &mdash; cliff facade" loading="lazy">
-        <img src="https://www.myresorts.eu/upItems/imgs/001/mnlt_25_123_FPX_251029_cam_relax_FINAL_wide.jpg" alt="Ananta Villas &mdash; pool" loading="lazy">
+      <div class="card__overlays">
+        <img class="card__overlay-img" src="https://pauly-ceo.github.io/ananta-canggu-assets/render-facade.jpg" alt="Ananta Canggu detail" loading="lazy">
+        <img class="card__overlay-img" src="https://pauly-ceo.github.io/ananta-canggu-assets/render-bedroom.jpg" alt="Ananta Canggu interior" loading="lazy">
       </div>
-    </div>
-  </a>
-
-  <div id="in-preparation" style="scroll-margin-top:100px"></div>
-
-  <a class="pcard" href="https://pauly-ceo.github.io/ananta-canggu-assets/">
-    <div class="pcard__hero">
-      <img src="https://pauly-ceo.github.io/ananta-canggu-assets/render-rooftop.jpg" alt="Ananta Canggu &mdash; Padang Linjong, Bali" loading="lazy">
-      <div class="pcard__status prelaunch">In preparation</div>
-      <div class="pcard__overlay">
-        <h3 class="pcard__name">Ananta <em>Canggu</em></h3>
-        <ul class="pcard__meta">
-          <li>Padang Linjong &middot; Canggu &middot; Bali</li>
-          <li>36 branded residences &middot; 3 buildings</li>
-          <li>From $191K</li>
-          <li>Keys Q2 2028</li>
+      <div class="card__body">
+        <div class="card__title-block"><h3 class="card__name">Ananta Canggu</h3><span class="card__cta-pill">View project</span></div>
+        <ul class="card__meta">
+          <li>Identity Designers · THIERRA build</li>
+          <li>Branded residences · 36 units</li>
+          <li>Padang Linjong · Canggu · Bali</li>
+          <li>From $191k · keys Q2 2028</li>
+          <li class="card__cta"><span>View project</span></li>
         </ul>
       </div>
+    </a>
     </div>
-    <div class="pcard__ed">
-      <div class="pcard__copy">
-        <div class="eyebrow">Chapter II &middot; In preparation</div>
-        <h3>Three buildings. <em>Thirty-six homes.</em></h3>
-        <p>Design-led residences on a single hectare in Padang Linjong &mdash; the unhurried side of Canggu. Four minutes to the surf by scooter. Identity Designers; built by THIERRA.</p>
-        <p>Phase 1 VIP open &mdash; six of nine slots remain at the &minus;4 % entry. Keys Q2 2028.</p>
-        <span class="pcard__cta">View project &nearr;</span>
-      </div>
-      <div class="pcard__gallery">
-        <img src="https://pauly-ceo.github.io/ananta-canggu-assets/render-facade.jpg" alt="Ananta Canggu &mdash; facade" loading="lazy">
-        <img src="https://pauly-ceo.github.io/ananta-canggu-assets/render-bedroom.jpg" alt="Ananta Canggu &mdash; bedroom" loading="lazy">
-      </div>
-    </div>
-  </a>
-
 </section>
 
 
@@ -998,7 +935,7 @@
     <h2>A second home that pays rent — and holds value.</h2>
     <p class="invest-block__lead">Ananta is built for ownership that earns. Operator-run end to end, with year-round occupancy and a single party accountable for both the asset and the income.</p>
     <div class="invest-block__kpis">
-      <div class="invest-block__kpi"><span class="num">9–13<small>%</small></span><span class="cap">Targeted net yield, p.a.</span></div>
+      <div class="invest-block__kpi"><span class="num">9–13<small>%</small></span><span class="cap">Net yield, p.a.</span></div>
       <div class="invest-block__kpi"><span class="num">70<small>%</small></span><span class="cap">Year-round occupancy</span></div>
       <div class="invest-block__kpi"><span class="num">End–to–end</span><span class="cap">Operator-run, every unit</span></div>
     </div>
@@ -1153,7 +1090,7 @@
       <div class="invest-tandem__story">
         <div class="eyebrow">No fine print</div>
         <h3 class="invest-tandem__title">Where the money <em>goes</em> first.</h3>
-        <p>Targeted net yield 9–13 % p.a. Here's the part most operators leave out — what comes off the top before the distribution reaches you. Hover any segment for the why. Projections, not guarantees.</p>
+        <p>We promise 9–13 % net. Here's the part most operators leave out — what comes off the top before yield reaches you. Hover any segment for the why.</p>
         <p class="invest-tandem__source">Approximate splits at unit level; full per-unit pro forma on request. Pooled rental, conservative ADR for the premium Canggu segment, 70 % year-round occupancy.</p>
       </div>
       <div class="invest-tandem__visual">
@@ -1167,7 +1104,7 @@
           <div class="wf-row" data-tip="Utilities, pool, gardens, consumables, insurance, daily property OPEX."><span class="wf-lbl">− OPEX</span><div class="wf-bar" style="width:68%;background:#7A8B91"><span class="wf-val">68 %</span></div></div>
           <div class="wf-row" data-tip="Periodic refresh, FF&E replacement, soft-good cycle. So your unit still rents like new in year ten."><span class="wf-lbl">− Reserve</span><div class="wf-bar" style="width:65%;background:#9F8B6B"><span class="wf-val">65 %</span></div></div>
           <div class="wf-row" data-tip="Indonesian withholding tax on rental income (10 %), paid at source by the operator."><span class="wf-lbl">− Tax (ID)</span><div class="wf-bar" style="width:58%;background:#B8A88F"><span class="wf-val">58 %</span></div></div>
-          <div class="wf-row wf-row--net" data-tip="Distributed quarterly to the owner. Equivalent to a targeted 9–13 % net yield on the entry price at 70 % occupancy. Projected, not guaranteed."><span class="wf-lbl">= Net to you</span><div class="wf-bar" style="width:55%;background:#C9A87C"><span class="wf-val">~ 55–58 %</span></div></div>
+          <div class="wf-row wf-row--net" data-tip="Distributed quarterly to the owner. Equivalent to 9–13 % net yield on the entry price at 70 % occupancy."><span class="wf-lbl">= Net to you</span><div class="wf-bar" style="width:55%;background:#C9A87C"><span class="wf-val">~ 55–58 %</span></div></div>
         </div>
         <div class="invest-tandem__visual-foot">
           <span id="wfTip">Hover any row to see what that line covers.</span>
@@ -1413,7 +1350,7 @@
       <div class="partner-row">
         <div class="partner-row__flag">CZ · in-house</div>
         <div class="partner-row__name">Kristýna Pauly</div>
-        <div class="partner-row__role">CEO — Central Europe, family offices, direct investors.</div>
+        <div class="partner-row__role">Head of Sales — Central Europe, family offices, direct investors.</div>
         <a href="mailto:kristyna.pauly@thepersonalresorts.com" class="partner-row__link">Email →</a>
       </div>
       <div class="partner-row">

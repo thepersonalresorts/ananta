@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ananta · design lab</title>
+<meta name="description" content="Experimental design slice — not the live site.">
+<link rel="preload" href="fonts/fraunces-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="lab.css">
+<!-- Pre-paint reveal gate: hide animated elements only when JS is live (lab.js un-hides if GSAP/motion is unavailable). No flash, but never permanently hidden. -->
+<script>document.documentElement.classList.add('js')</script>
+<style>.js [data-split],.js [data-reveal]{opacity:0}@media(prefers-reduced-motion:reduce){.js [data-split],.js [data-reveal]{opacity:1}}</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="lab-flag">design lab · not live</div>
+
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="#">Anāntā</a>
+  <a class="nav__cta" href="#enquire">Enquire</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__media" data-parallax="0.1">
+    <video autoplay muted loop playsinline preload="metadata" poster="/villas/hero-poster.jpg">
+      <source src="/hero_bali_sunset_m.mp4" type="video/mp4" media="(max-width:768px)">
+      <source src="/hero_bali_sunset.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero__scrim"></div>
+  <div class="hero__inner">
+    <p class="eyebrow" data-reveal>Anāntā · Bali</p>
+    <h1 class="display reveal-lines" data-split>Some places you visit. One or two, you never quite leave.</h1>
+    <p class="hero__sub" data-reveal>A small collection of homes on the Bukit cliffs and above the Canggu surf.</p>
+  </div>
+  <div class="scrollcue" aria-hidden="true">Scroll<span></span></div>
+</header>
+
+<!-- PLACE (restraint) -->
+<section class="place">
+  <div class="place__inner">
+    <p class="eyebrow" data-reveal>The idea</p>
+    <p class="display reveal-lines" data-split>On the Bukit, eight villas above the water. In Canggu, thirty-six residences over the surf. <em>One way of living</em>, two ways to arrive.</p>
+  </div>
+</section>
+
+<!-- DAY IN THE LIFE -->
+<div class="day">
+
+  <section class="panel">
+    <div class="panel__media" data-clip><img src="/villas/render-pool.jpg" alt="Cliff-edge pool at first light" loading="lazy"></div>
+    <div class="panel__scrim"></div>
+    <div class="panel__cap">
+      <p class="panel__time" data-reveal>06:30 · First light</p>
+      <h2 class="panel__title display reveal-lines" data-split>The sea before anyone else</h2>
+      <p class="panel__sensory sensory" data-reveal>The tide is out at Bingin. The pool holds the warmth of last night. No one is awake but you, and the water.</p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__media" data-clip><img src="/villas/render-facade.jpg" alt="The villa in the golden hour" loading="lazy"></div>
+    <div class="panel__scrim"></div>
+    <div class="panel__cap">
+      <p class="panel__time" data-reveal>16:40 · The gold hour</p>
+      <h2 class="panel__title display reveal-lines" data-split>When the cliff turns to amber</h2>
+      <p class="panel__sensory sensory" data-reveal>Frangipani on the path down. The light goes amber, then rose. Somewhere below, the last longboards come in.</p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__media" data-clip><img src="/villas/render-living.jpg" alt="The long table in the evening" loading="lazy"></div>
+    <div class="panel__scrim"></div>
+    <div class="panel__cap">
+      <p class="panel__time" data-reveal>20:00 · The long table</p>
+      <h2 class="panel__title display reveal-lines" data-split>The part the brochure never sold</h2>
+      <p class="panel__sensory sensory" data-reveal>Dinner under the open roof, salt still on your skin. Nobody is checking the time. This is the part you came for.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- VILLA REVEAL -->
+<section class="villa">
+  <div class="villa__media" data-parallax="0.1"><img src="/villas/hero-photo.jpg" alt="Ananta villa, Bukit" loading="lazy"></div>
+  <div class="villa__scrim"></div>
+  <div class="villa__inner">
+    <p class="eyebrow" data-reveal>Ananta Villas · Bukit</p>
+    <h2 class="display reveal-lines" data-split>Seven are spoken for. The eighth is still a question.</h2>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close" id="enquire">
+  <p class="eyebrow" data-reveal>Anāntā</p>
+  <h2 class="display reveal-lines" data-split>Owned, operated, and yours to come back to, for as long as you like.</h2>
+  <a class="close__cta" href="#" data-reveal>Request the collection
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</section>
+
+<footer class="foot">
+  <span class="foot__brand">Anāntā</span>
+  <span class="foot__note">A boutique resort developer on Bali. Built by THIERRA, backed by FIPOX. This page is an experimental design study, not the live site.</span>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="lab.js"></script>
+</body>
+</html>

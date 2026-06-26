@@ -1,780 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ananta Villas — Eight private villas on the Bukit, Bali</title>
+<meta name="description" content="Eight private cliff-front villas in Desa Kutuh, Nusa Dua. Built to own, run to pay. Handover 2027.">
 <meta name="robots" content="noindex">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#F1EEE7">
-<title>Ananta Villas - Eight private villas in Desa Kutuh, Nusa Dua, Bali</title>
-<meta name="description" content="Ananta Villas. Eight private villas in Desa Kutuh, the unhurried south of Nusa Dua. Designed by Studio Identity Designers. Built by THIERRA. Operated by Ananta. Handover Q3 2027 - one villa remains.">
-<meta property="og:title" content="Ananta Villas - Eight private villas in Desa Kutuh, Bali">
-<meta property="og:description" content="Designed by Studio Identity Designers. Built by THIERRA. Operated by Ananta. Handover Q3 2027 - one villa remains.">
-<meta property="og:image" content="/villas/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="canonical" href="/villas/">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --cream:#F1EEE7;
-  --cream2:#E9E4DA;
-  --ink:#211E1A;
-  --soft:#8C8275;
-  --line:#D8D1C5;
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --body:'EB Garamond',Georgia,serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
-body{font-family:var(--body);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;font-size:18px;line-height:1.6;overflow-x:hidden;max-width:100%;width:100%}
-img,video,svg{display:block;max-width:100%}
-svg{height:auto}
-.ed>*,.cgrid>*,.facts>*,.foot>*,.ed .txt>*{min-width:0}
-.ed .txt .lead,.list .it p,.scene .cap .lead{overflow-wrap:anywhere}
-a{color:inherit;text-decoration:none}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-
-.eyebrow{font-family:var(--body);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);font-weight:400}
-.slink{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px;transition:opacity .3s}
-.slink:hover{opacity:.6}
-
-.stitle{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:.05em;text-transform:uppercase}
-.stitle em{font-style:normal;text-transform:uppercase;letter-spacing:.05em}
-.stitle .up{text-transform:uppercase}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--cream);border-bottom:1px solid transparent;
-  display:flex;align-items:center;gap:clamp(20px,4vw,52px);padding:0 clamp(18px,3vw,40px);height:58px;transition:border-color .3s}
-nav.scrolled{border-bottom-color:var(--line)}
-.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
-.brand-seal,.brand-word{display:inline-block;background-color:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;mask-mode:alpha}
-.brand-seal{-webkit-mask-image:url(/ananta-seal.png);mask-image:url(/ananta-seal.png);width:22px;height:22px;flex:none}
-.brand-word{-webkit-mask-image:url(/ananta-wordmark.svg);mask-image:url(/ananta-wordmark.svg);aspect-ratio:782.5 / 153;height:15px;flex:none}
-.brand-suffix{font-size:17px;letter-spacing:.12em}
-.brand .amp{font-size:12px;letter-spacing:.1em;margin:0 2px;vertical-align:1px}
-.navback{font-family:var(--body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-right:auto;padding-left:6px}
-.navlinks{display:flex;gap:clamp(16px,2vw,30px);align-items:center;flex:1}
-.navlinks a{font-family:var(--body);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:4px 0;border-bottom:1px solid transparent;transition:border-color .25s}
-.navlinks a:hover{border-bottom-color:var(--ink)}
-.navright{display:flex;gap:22px;align-items:center}
-.navright a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;margin-left:auto}
-.burger span{width:24px;height:1.4px;background:var(--ink)}
-
-.mobile-menu{position:fixed;inset:0;background:var(--cream);z-index:60;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1);
-  display:flex;flex-direction:column;justify-content:center;padding:0 32px;gap:4px}
-.mobile-menu.open{transform:translateY(0)}
-.mobile-menu a{font-family:var(--serif);font-size:34px;padding:10px 0}
-.mobile-menu .x{position:absolute;top:18px;right:28px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
-
-.hero{position:relative;margin-top:58px;height:calc(100vh - 58px);min-height:540px;overflow:hidden}
-.hero video,.hero .hp{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .veil{position:absolute;inset:0;background:rgba(20,18,15,.22)}
-.hero .veil-b{position:absolute;left:0;right:0;bottom:0;height:46%;background:rgba(20,18,15,.30)}
-.hero-cap{position:absolute;left:clamp(18px,4vw,56px);bottom:clamp(40px,7vh,76px);z-index:3;color:#fff;max-width:1100px;text-shadow:0 1px 30px rgba(0,0,0,.45)}
-.hero-cap h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,7vw,104px);line-height:.98;letter-spacing:.05em;text-transform:uppercase}
-.hero-cap h1 em{font-style:normal}
-.hero-cap .sub{font-family:var(--body);font-style:italic;font-size:clamp(17px,1.6vw,23px);margin-top:18px;color:#f3efe7;max-width:60ch}
-
-.scene{position:relative;height:92vh;min-height:520px;overflow:hidden}
-.scene img,.scene video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.scene .veil{position:absolute;inset:0;background:rgba(20,18,15,.18)}
-.scene .veil-b{position:absolute;left:0;right:0;bottom:0;height:50%;background:rgba(20,18,15,.30)}
-.scene .cap{position:absolute;left:clamp(18px,4vw,56px);bottom:clamp(36px,6vh,68px);z-index:3;color:#fff;max-width:1000px;text-shadow:0 1px 30px rgba(0,0,0,.45)}
-.scene .cap h2{font-size:clamp(34px,5.4vw,76px);color:#fff}
-.scene .cap .lead{font-family:var(--body);font-style:italic;font-size:clamp(16px,1.4vw,20px);margin:14px 0 18px;color:#f1ede5;max-width:54ch}
-.scene .cap .slink{color:#fff}
-
-.cats{padding:clamp(70px,10vh,120px) clamp(18px,4vw,56px)}
-.cats .head{text-align:center;margin-bottom:46px}
-.cgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.6vw,22px)}
-.cat figure{overflow:hidden;aspect-ratio:3/4;margin-bottom:14px}
-.cat img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
-.cat:hover img{transform:scale(1.05)}
-.cat .clab{text-align:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
-
-.ed{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:74vh}
-.ed.rev{direction:rtl}.ed.rev>*{direction:ltr}
-.ed figure{overflow:hidden}
-.ed figure img{width:100%;height:100%;object-fit:cover;min-height:48vh}
-.ed .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,7vw,110px) clamp(24px,5vw,90px);background:var(--cream)}
-.ed .txt.alt{background:var(--cream2)}
-.ed .txt h2{font-size:clamp(32px,3.6vw,58px);margin:18px 0 0}
-.ed .txt .lead{margin-top:22px;max-width:48ch;color:var(--ink)}
-.ed .txt .soft{color:var(--soft)}
-.ed .txt .slink{margin-top:30px;color:var(--ink)}
-.sigcap{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-top:12px}
-
-.list{margin-top:24px;border-top:1px solid var(--line)}
-.list .it{padding:20px 0;border-bottom:1px solid var(--line)}
-.list .it .rn{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
-.list .it h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.2vw,30px);margin-top:4px}
-.list .it p{color:var(--soft);font-size:16px;margin-top:6px;max-width:56ch}
-
-.quote{padding:clamp(90px,15vh,170px) clamp(24px,6vw,80px);text-align:center}
-.quote blockquote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(28px,4vw,52px);line-height:1.2;max-width:22ch;margin:0 auto;letter-spacing:.01em}
-.quote .by{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-top:34px}
-
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
-.facts div{background:var(--cream);padding:22px 16px}
-.facts .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
-.facts .v{font-family:var(--serif);font-weight:500;font-size:24px;margin-top:6px}
-
-footer{background:var(--cream2);padding:clamp(70px,10vh,120px) clamp(18px,4vw,56px) 40px}
-.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:50px;max-width:1280px;margin:0 auto;align-items:start}
-.foot h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:18px;font-weight:400}
-.foot .join h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,42px);margin-bottom:18px}
-.foot .join p{color:var(--soft);max-width:42ch;margin-bottom:22px}
-.foot a,.foot p.ln{display:block;font-size:16px;padding:5px 0;color:var(--ink)}
-.foot a:hover{color:var(--soft)}
-.footbar{max-width:1280px;margin:48px auto 0;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
-.footbar-right{display:inline-flex;align-items:center;gap:12px}
-.social-ig{display:inline-flex;align-items:center;justify-content:center;color:inherit;opacity:.8;transition:opacity .25s}
-.social-ig:hover{opacity:1}
-.social-ig svg{display:block}
-.cta{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--ink);padding:14px 22px;margin-top:8px}
-.cta:hover{background:var(--ink);color:var(--cream)}
-
-.reveal{opacity:0;transform:translateY(22px);transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
-@media (max-width: 768px){ .reveal{opacity:1; transform:none;} }
-
-@media (max-width:1100px){
-  .cgrid{grid-template-columns:repeat(3,1fr)}
-  .ed{grid-template-columns:1fr}
-  .ed.rev{direction:ltr}
-  .ed figure img{min-height:60vh}
-  .foot{grid-template-columns:1fr 1fr}
-}
-@media (max-width:768px){
-  .navlinks,.navright{display:none}
-  .navback{display:none}
-  .burger{display:flex}
-  nav{height:52px;gap:0}
-  .brand{font-size:16px;letter-spacing:.12em}
-  .hero{margin-top:52px;height:calc(100vh - 52px);height:calc(100svh - 52px);min-height:480px}
-  .hero-cap{left:20px;right:20px;bottom:34px}
-  .hero-cap h1{font-size:38px;line-height:1.0}
-  .hero-cap .sub{font-size:16px;margin-top:14px}
-  .scene{height:82vh;height:82svh;min-height:440px}
-  .scene .cap{left:20px;right:20px;bottom:30px}
-  .scene .cap h2{font-size:34px}
-  .scene .cap .lead{font-size:16px;max-width:none}
-  .ed{min-height:0}
-  .ed figure img{min-height:56vw;max-height:62vh}
-  .ed .txt{padding:44px 22px}
-  .ed .txt h2{font-size:30px}
-  .cats{padding:60px 20px}
-  .cgrid{grid-template-columns:repeat(2,1fr);gap:16px 14px}
-  .cat:last-child{grid-column:1 / -1}
-  .cat:last-child figure{aspect-ratio:16/10}
-  .quote{padding:80px 26px}
-  .facts{grid-template-columns:1fr 1fr}
-  .foot{grid-template-columns:1fr;gap:34px}
-  footer{padding:64px 22px calc(36px + env(safe-area-inset-bottom))}
-}
-@media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none} html{scroll-behavior:auto} }
-
-/* v5: ROI table */
-.roi-block{padding:clamp(80px,10vw,140px) clamp(18px,4vw,56px);background:var(--cream2);text-align:center}
-.roi-block .head{margin-bottom:48px}
-.roi-block h2{font-size:clamp(34px,4.6vw,62px);margin-top:14px}
-.roi-block .lead{font-family:var(--body);font-style:italic;color:var(--soft);font-size:17px;max-width:60ch;margin:18px auto 0}
-.roi-table{max-width:980px;margin:0 auto;border-top:1px solid var(--line);text-align:left}
-.roi-table__row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:24px;padding:22px 12px;border-bottom:1px solid var(--line);align-items:baseline}
-.roi-table__row.is-head{border-bottom-color:var(--ink);padding:18px 12px}
-.roi-table__row.is-head .h{font-family:var(--body);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);text-align:right}
-.roi-table__row.is-head .h:first-child{text-align:left}
-.roi-table__row.is-head .h.mid{color:var(--ink)}
-.roi-table__row.is-net{background:#F8F4EB;margin:0 -12px;padding:24px 24px;border-top:1px solid var(--ink);border-bottom:0}
-.roi-table__row.is-net .k{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink);text-transform:uppercase;letter-spacing:.06em}
-.roi-table__row.is-net .v{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,30px);color:var(--ink)}
-.roi-table__row .k{font-family:var(--body);font-size:15px;color:var(--ink)}
-.roi-table__row .v{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--ink);text-align:right;letter-spacing:.01em}
-.roi-table__row .v.mid{color:#5E5040}
-.roi-source{font-family:var(--body);font-size:12.5px;color:var(--soft);max-width:780px;margin:24px auto 0;text-align:left;line-height:1.6}
-@media (max-width:768px){
-  .roi-table__row{grid-template-columns:1.2fr .8fr .8fr .8fr;gap:10px;padding:16px 6px}
-  .roi-table__row .k,.roi-table__row .v{font-size:13.5px}
-  .roi-table__row.is-head .h{font-size:10px;letter-spacing:.16em}
-  .roi-table__row.is-net .k,.roi-table__row.is-net .v{font-size:16px}
-}
-
-/* v5: Floor plan */
-.plan-block{padding:clamp(80px,10vw,140px) clamp(18px,4vw,56px);background:var(--cream);border-top:1px solid var(--line)}
-.plan-block .head{text-align:center;margin-bottom:56px;max-width:780px;margin-left:auto;margin-right:auto}
-.plan-block h2{font-size:clamp(34px,4.6vw,62px);margin-top:14px}
-.plan-block .lead{font-style:italic;color:var(--soft);margin-top:18px;font-size:16px}
-.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);max-width:1100px;margin:0 auto;align-items:start}
-.plan-card{text-align:center}
-.plan-card__floor{font-family:var(--body);font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--soft);margin-bottom:14px}
-.plan-card__svg{width:100%;height:auto;max-height:340px;background:#FAF7F0;border:1px solid var(--line);padding:24px}
-.plan-card__title{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,30px);margin-top:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
-.plan-card__meta{font-family:var(--body);font-size:14.5px;color:var(--soft);margin-top:6px}
-.plan-card__meta strong{color:var(--ink);font-weight:500}
-@media (max-width:768px){ .plan-grid{grid-template-columns:1fr;gap:48px} }
-
-/* v5: VIP services */
-.svc-block{padding:clamp(80px,10vw,140px) clamp(18px,4vw,56px);background:var(--cream2);border-top:1px solid var(--line)}
-.svc-block .head{text-align:center;margin-bottom:56px;max-width:780px;margin-left:auto;margin-right:auto}
-.svc-block h2{font-size:clamp(34px,4.6vw,62px);margin-top:14px}
-.svc-block .lead{font-style:italic;color:var(--soft);margin-top:18px;font-size:16px}
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 60px;max-width:980px;margin:0 auto}
-.svc-row{display:grid;grid-template-columns:24px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.svc-row .n{font-family:var(--body);font-size:11.5px;letter-spacing:.18em;color:var(--soft)}
-.svc-row .t{font-family:var(--body);font-size:16px;color:var(--ink);line-height:1.5}
-@media (max-width:768px){ .svc-grid{grid-template-columns:1fr;gap:0} }
-
-/* v4: Payment milestones */
-.pay-block{padding:clamp(80px,10vw,140px) clamp(18px,4vw,56px);background:var(--cream);border-top:1px solid var(--line)}
-.pay-block .head{text-align:center;margin-bottom:64px;max-width:780px;margin-left:auto;margin-right:auto}
-.pay-block h2{font-size:clamp(34px,4.6vw,62px);margin-top:14px}
-.pay-block .lead{font-style:italic;color:var(--soft);margin-top:18px;font-size:16px}
-.pay-wrap{max-width:1100px;margin:0 auto}
-.pay-bar{display:grid;grid-template-columns:35fr 35fr 25fr 5fr;gap:6px;margin:0 0 0}
-.pay-seg{position:relative;padding:46px 0 64px;text-align:center}
-.pay-seg .pay-lab{position:absolute;top:0;left:0;right:0;font-family:var(--body);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}
-.pay-seg .pay-fill{height:74px;background:#D8CFBD;color:var(--ink);font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.6vw,34px);letter-spacing:.04em;display:flex;align-items:center;justify-content:center}
-.pay-bar .pay-seg:nth-child(2) .pay-fill{background:#CDC2AC}
-.pay-bar .pay-seg:nth-child(3) .pay-fill{background:#BFB39A}
-.pay-bar .pay-seg.notary .pay-fill{background:#9F8B6B;color:#fff;font-size:clamp(14px,1.6vw,18px)}
-.pay-seg .pay-date{position:absolute;left:0;right:0;bottom:0;font-family:var(--body);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);padding-top:14px}
-.pay-rule{height:1px;background:var(--line);margin:56px 0 40px}
-.pay-facts{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,72px);max-width:760px;margin:0 auto;text-align:center}
-.pay-fact .pay-fact__lab{font-family:var(--body);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
-.pay-fact .pay-fact__val{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,30px);letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
-@media (max-width:768px){
-  .pay-bar{grid-template-columns:1fr;gap:4px}
-  .pay-seg{padding:32px 0 50px}
-  .pay-seg .pay-fill{height:60px}
-  .pay-facts{grid-template-columns:1fr;gap:28px}
-}
-
-/* v5: Detail features */
-.feat-block{padding:clamp(80px,10vw,140px) clamp(18px,4vw,56px);background:var(--cream2);border-top:1px solid var(--line)}
-.feat-block .head{text-align:center;margin-bottom:72px;max-width:780px;margin-left:auto;margin-right:auto}
-.feat-block h2{font-size:clamp(34px,4.6vw,62px);margin-top:14px}
-.feat-block .lead{font-style:italic;color:var(--soft);margin-top:18px;font-size:16px}
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);max-width:1100px;margin:0 auto}
-.feat-card{padding:clamp(20px,2.4vw,32px) 0;text-align:left}
-.feat-card .feat-n{font-family:var(--body);font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--soft);margin-bottom:18px}
-.feat-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.8vw,34px);line-height:1.1;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);margin-bottom:18px}
-.feat-card p{font-family:var(--body);font-size:16px;line-height:1.65;color:var(--ink);max-width:46ch}
-@media (max-width:768px){ .feat-grid{grid-template-columns:1fr;gap:40px} }
-
-/* mobile audit v2: extra polish + 380px fallback */
-@media (max-width:768px){
-  .roi-block,.plan-block,.svc-block,.pay-block,.feat-block{padding-left:20px;padding-right:20px}
-  .roi-source{text-align:center;font-size:12px;padding:0 4px}
-  .plan-card__svg{max-height:none;padding:18px}
-  .pay-seg .pay-lab{font-size:11px;letter-spacing:.18em}
-  .pay-seg .pay-date{font-size:12px}
-  .pay-fact .pay-fact__val{font-size:20px}
-  .feat-card p{max-width:none}
-  .feat-card h3{font-size:24px}
-}
-@media (max-width:380px){
-  .roi-table__row{grid-template-columns:1.3fr .7fr .7fr .7fr;gap:6px;padding:14px 4px}
-  .roi-table__row .k{font-size:12.5px;line-height:1.35}
-  .roi-table__row .v{font-size:12.5px;letter-spacing:0}
-  .roi-table__row.is-head .h{font-size:9.5px;letter-spacing:.1em}
-  .roi-table__row.is-net{margin:0 -4px;padding:18px 10px}
-  .roi-table__row.is-net .k{font-size:14px}
-  .roi-table__row.is-net .v{font-size:15px}
-  .pay-fact .pay-fact__val{font-size:18px}
-  .hero-cap h1{font-size:34px}
-  .scene .cap h2{font-size:30px}
-}
-/* Lead-capture modal (shared markup with apartments; same CSS vars) */
-.modal{position:fixed;inset:0;background:rgba(20,18,15,.65);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
-.modal.open{display:flex}
-.modal__box{background:var(--cream);max-width:560px;width:100%;padding:46px 38px;position:relative;max-height:90vh;overflow-y:auto}
-.modal__x{position:absolute;top:14px;right:18px;background:none;border:0;cursor:pointer;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
-.modal h3{font-family:var(--serif);font-weight:500;font-size:34px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
-.modal .lead{color:var(--soft);font-size:15px;margin-bottom:24px}
-.modal label{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin:14px 0 4px}
-.modal input,.modal select{width:100%;padding:10px 0;background:none;border:0;border-bottom:1px solid var(--line);font-family:var(--body);font-size:16px;color:var(--ink);outline:none}
-.modal input:focus,.modal select:focus{border-bottom-color:var(--ink)}
-.modal__check{display:flex;align-items:flex-start;gap:10px;margin-top:18px;font-size:13px;color:var(--soft);cursor:pointer}
-.modal__check input{width:auto;margin-top:5px;flex-shrink:0}
-.modal__check span{flex:1;text-transform:none;letter-spacing:normal;line-height:1.5}
-.modal__check em{font-style:normal;opacity:.55;font-size:11px;letter-spacing:.04em}
-.modal__check a{color:var(--ink);text-decoration:underline}
-.modal__send{margin-top:24px;width:100%;background:var(--ink);color:var(--cream);border:0;padding:14px;font-family:var(--body);font-size:12px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
-.modal__send:hover{background:#000}
-.modal__success{text-align:center}
-.modal__success p{font-size:48px;color:#8b9779;margin-bottom:10px}
-.modal__error{margin-top:14px;color:#a23b3b;font-size:13px;line-height:1.45}
-.hp-field{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
-.cf-turnstile-target{margin-top:18px;min-height:65px}
-@media(max-width:560px){.modal__box{padding:36px 26px}.modal h3{font-size:28px}}
-</style>
+<meta property="og:title" content="Ananta Villas — Eight private villas on the Bukit, Bali">
+<meta property="og:image" content="/villas/og-image.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/fraunces-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<style>.js [data-split],.js [data-reveal]{opacity:0}</style>
 </head>
 <body>
 
-<a class="sr-only" href="#setting">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="lab-flag">redesign · not live</div>
 
-<nav id="nav">
-  <a href="#top" class="brand" aria-label="Ananta · Villas"><span class="brand-seal" aria-hidden="true"></span><span class="brand-word" aria-hidden="true"></span><span class="brand-suffix"><span class="amp">·</span> Villas</span></a>
-  <a href="/" class="navback">← Back to Ananta</a>
-  <div class="navlinks">
-    <a href="#setting">The Villas</a>
-    <a href="#architecture">Architecture</a>
-    <a href="#hospitality">Hospitality</a>
-    <a href="#location">Location</a>
-    <a href="#investment">Investment</a>
-    <a href="https://www.instagram.com/anantavillasbali/" target="_blank" rel="noopener">News</a>
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="/"><span class="nav__logo" role="img" aria-label="Ananta"></span></a>
+  <div class="nav__links">
+    <a href="/">Ananta</a>
+    <a href="#design">The Villas</a>
+    <a href="#invest">Invest</a>
+    <a href="/apartments/">Canggu</a>
   </div>
-  <div class="navright">
-    <!-- CS přepínač skrytý pro EN-only launch; cs.html zůstává v repu (CZ fast-follow) -->
-    <a href="#enquire">Speak with us</a>
-  </div>
-  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <a class="nav__cta" href="#enquire">Enquire</a>
 </nav>
 
-<div class="mobile-menu" id="mm">
-  <span class="x" id="mmx">Close ×</span>
-  <a href="#setting">The Villas</a>
-  <a href="#architecture">Architecture</a>
-  <a href="#hospitality">Hospitality</a>
-  <a href="#location">Location</a>
-  <a href="#investment">Investment</a>
-  <a href="https://www.instagram.com/anantavillasbali/" target="_blank" rel="noopener">News</a>
-  <a href="#enquire">Speak with us</a>
-</div>
-
-<header class="hero" id="top">
-  <video class="hp" autoplay muted loop playsinline poster="hero-poster.jpg">
-    <source src="hero-m.mp4" type="video/mp4" media="(max-width: 768px)">
-    <source src="hero.mp4" type="video/mp4">
-  </video>
-  <div class="veil"></div><div class="veil-b"></div>
-  <div class="hero-cap">
-    <h1><span class="up">A quiet corner</span> <em>of</em> <span class="up">Nusa Dua</span></h1>
-    <div class="sub">Eight private villas in Desa Kutuh - the unhurried south of Bali. Handover Q3 2027.</div>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__media" data-parallax="0.1">
+    <video autoplay muted loop playsinline preload="metadata" poster="/villas/hero-poster.jpg">
+      <source src="/villas/hero-m.mp4" type="video/mp4" media="(max-width:768px)">
+      <source src="/villas/hero.mp4" type="video/mp4">
+    </video>
   </div>
+  <div class="hero__scrim"></div>
+  <div class="hero__inner">
+    <p class="eyebrow" data-reveal>Ananta Villas · Bukit · Nusa Dua</p>
+    <h1 class="display" data-split>A quiet corner of Nusa Dua.</h1>
+  </div>
+  <div class="scrollcue" aria-hidden="true">Scroll<span></span></div>
 </header>
 
-<section class="scene reveal" id="setting">
-  <img src="render-aerial.jpg" alt="Ananta Villas - aerial view across Desa Kutuh, Nusa Dua">
-  <div class="veil"></div><div class="veil-b"></div>
-  <div class="cap">
-    <h2 class="stitle"><em>The</em> <span class="up">Setting</span></h2>
-    <p class="lead">Desa Kutuh - Bali's most institutional address, anchored by Kempinski, the upcoming Mandarin Oriental and the Bali National Golf Club. Held its value through every cycle.</p>
-    <a class="slink" href="#location">Discover the location</a>
-  </div>
-</section>
-
-<section class="cats" id="villas">
-  <div class="head reveal">
-    <div class="eyebrow">The Villas</div>
-    <h2 class="stitle" style="font-size:clamp(30px,3.4vw,52px);margin-top:14px"><em>Eight homes,</em> <span class="up">seven placed</span></h2>
-  </div>
-  <div class="cgrid reveal">
-    <a class="cat" href="#architecture"><figure><img src="render-facade.jpg" alt="Villa facade" loading="lazy"></figure><div class="clab">Facade</div></a>
-    <a class="cat" href="#architecture"><figure><img src="render-living.jpg" alt="Living spaces" loading="lazy"></figure><div class="clab">Living</div></a>
-    <a class="cat" href="#architecture"><figure><img src="render-bedroom.jpg" alt="Bedroom" loading="lazy"></figure><div class="clab">Bedroom</div></a>
-    <a class="cat" href="#architecture"><figure><img src="render-bathroom.jpg" alt="Bathroom" loading="lazy"></figure><div class="clab">Bathroom</div></a>
-    <a class="cat" href="#hospitality"><figure><img src="render-pool.jpg" alt="Private pool" loading="lazy"></figure><div class="clab">Pool</div></a>
-  </div>
-</section>
-
-<section class="scene reveal" id="architecture">
-  <img src="render-facade.jpg" alt="Organic curves and perforated stone screens">
-  <div class="veil"></div><div class="veil-b"></div>
-  <div class="cap">
-    <h2 class="stitle"><em>Organic curves,</em> <span class="up">perforated screens</span></h2>
-    <p class="lead">Eight private villas threaded through layered palm gardens and perforated stone screens. Organic curves indoors, framed views outdoors. Designed by Studio Identity Designers.</p>
-  </div>
-</section>
-
-<section class="ed" id="hospitality">
-  <figure class="reveal"><img src="render-courtyard.jpg" alt="Courtyard at Ananta Villas" loading="lazy"></figure>
-  <div class="txt reveal">
-    <div class="eyebrow">A residence, a hotel</div>
-    <h2 class="stitle"><em>Lives like a home.</em> <span class="up">Runs like a hotel.</span></h2>
-    <div class="list">
-      <div class="it"><div class="rn">N° 01 · Vision</div><h3>Built once. Operated forever.</h3><p>Owners hold the asset. Ananta holds the operation. A residence that lives like a home and runs like a hotel.</p></div>
-      <div class="it"><div class="rn">N° 02 · Architecture</div><h3>Studio Identity Designers</h3><p>Eight private villas threaded through palm gardens and perforated stone screens. Organic curves indoors, framed views outdoors.</p></div>
-      <div class="it"><div class="rn">N° 03 · Hospitality</div><h3>Hotel-style service for every owner</h3><p>Private pool, daily housekeeping, full hospitality team. Operated by Ananta - your home when you are here, a managed asset when you are not.</p></div>
-      <div class="it"><div class="rn">N° 04 · Investment</div><h3>Seven of eight placed</h3><p>The project's economics, operating model and track record have been tested by the buyers in the room. One villa remains.</p></div>
+<!-- INTRO -->
+<section class="prolog">
+  <div class="wrap">
+    <h2 class="prolog__head display" data-split>Eight homes on the cliff. Seven are placed. One remains.</h2>
+    <div class="prolog__body">
+      <p data-reveal>Eight private villas in Desa Kutuh, the unhurried south of the Bukit. Cliff front, ocean wide, the surf a few minutes down the headland. Handover in 2027.</p>
+      <p data-reveal>Each villa lives like a home and runs like a hotel: yours to hold, ours to operate, from the architecture to the morning coffee.</p>
+    </div>
+    <div class="stats" data-reveal>
+      <div><strong>8</strong><span>Private villas</span></div>
+      <div><strong>30+30</strong><span>Years leasehold</span></div>
+      <div><strong>1 of 8</strong><span>Still available</span></div>
     </div>
   </div>
 </section>
 
-<section class="scene reveal">
-  <img src="render-pool.jpg" alt="Private pool at Ananta Villas - the daily appointment">
-  <div class="veil"></div><div class="veil-b"></div>
-  <div class="cap">
-    <h2 class="stitle"><em>The pool,</em> <span class="up">the daily appointment</span></h2>
-    <p class="lead">Private pool, gardens that walk you through the house, a table that opens to the night sky. The Bukit's quiet south.</p>
-    <a class="slink" href="#enquire">Speak with Kristýna</a>
+<!-- CINEMATIC PANELS -->
+<section class="panel">
+  <div class="panel__media" data-clip><img src="/villas/render-aerial.jpg" alt="Cliff-front architecture" loading="lazy"></div>
+  <div class="panel__scrim"></div>
+  <div class="panel__cap">
+    <p class="panel__time" data-reveal>The architecture</p>
+    <h2 class="panel__title display" data-split>Organic curves, perforated screens</h2>
+    <p class="panel__sensory sensory" data-reveal>Designed by Studio Identity Designers. Soft concrete, timber, and screens that breathe with the trade wind. Built into the cliff, not onto it.</p>
   </div>
 </section>
 
-<section class="quote reveal">
-  <blockquote>Eight villas. One quiet corner of Bali. One villa left.</blockquote>
-  <div class="by">Ananta Villas · Desa Kutuh, Nusa Dua</div>
-</section>
-
-<section class="ed rev">
-  <figure class="reveal"><img src="render-kitchen.jpg" alt="Interior of Ananta Villas" loading="lazy"></figure>
-  <div class="txt alt reveal">
-    <div class="eyebrow">N°01 · Ananta Collection</div>
-    <h2 class="stitle"><em>A</em> <span class="up">villa made personal</span></h2>
-    <p class="lead">Ananta Villas opens the Ananta collection as N°01 - eight private villas in Desa Kutuh, the institutional south of Bali. Designed by Studio Identity Designers, built by THIERRA, operated by Ananta.</p>
-    <p class="lead soft">Leasehold registered with a Bali notary, 30 + 30 year terms. Standard payment schedule 35 / 35 / 25 / 5. Handover Q3 2027.</p>
-    <div class="sigcap" style="margin-top:30px">Ananta · backed by FIPOX, built by THIERRA</div>
+<section class="panel" id="design">
+  <div class="panel__media" data-clip><img src="/villas/render-living.jpg" alt="The villa, indoor-outdoor" loading="lazy"></div>
+  <div class="panel__scrim"></div>
+  <div class="panel__cap">
+    <p class="panel__time" data-reveal>Hospitality</p>
+    <h2 class="panel__title display" data-split>Lives like a home. Runs like a hotel.</h2>
+    <p class="panel__sensory sensory" data-reveal>The pool is the daily appointment. The kitchen, the long table, the deck that never quite ends. Staffed, serviced, stocked, the way a resort is.</p>
   </div>
 </section>
 
-<section class="scene reveal">
-  <img src="mandarin-hero.jpg" alt="Mandarin Oriental opening next door in 2027">
-  <div class="veil"></div><div class="veil-b"></div>
-  <div class="cap">
-    <h2 class="stitle"><em>Just over the hill -</em> <span class="up">Mandarin Oriental</span></h2>
-    <p class="lead">49 cliff-top villa residences, three restaurants, a beach club and a Mandarin Oriental Spa. Architecture by Design Lab, landscapes by Bill Bensley. Walking distance from Ananta - same village, same beach. Opening 2027.</p>
+<section class="panel">
+  <div class="panel__media" data-clip><img src="/villas/render-bedroom.jpg" alt="The room" loading="lazy"></div>
+  <div class="panel__scrim"></div>
+  <div class="panel__cap">
+    <p class="panel__time" data-reveal>The room</p>
+    <h2 class="panel__title display" data-split>A residence proven by the room</h2>
+    <p class="panel__sensory sensory" data-reveal>Round windows onto the planting. Plaster the colour of sand at dusk. The kind of room you photograph once, then stop reaching for the phone.</p>
   </div>
 </section>
 
-<section class="ed" id="location">
-  <figure class="reveal"><img src="render-aerial.jpg" alt="The location - Desa Kutuh, Bukit peninsula" loading="lazy"></figure>
-  <div class="txt reveal">
-    <div class="eyebrow">Location</div>
-    <h2 class="stitle"><span class="up">Desa Kutuh,</span> <em>Nusa Dua</em></h2>
-    <p class="lead">Jl. Gunung Payung 8, on the southern tip of the Bukit peninsula. Thirty minutes from the international airport, walking distance to Kempinski, the upcoming Mandarin Oriental, and the Bali National Golf Club.</p>
-    <div class="facts">
-      <div><div class="k">To airport</div><div class="v">30 min</div></div>
-      <div><div class="k">Villas</div><div class="v">8 total</div></div>
-      <div><div class="k">Placed</div><div class="v">7 / 8</div></div>
-      <div><div class="k">Handover</div><div class="v">Q3 2027</div></div>
+<!-- INVEST -->
+<section class="section section--cream invest" id="invest">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>For investors</p>
+    <h2 class="invest__head display" data-split>One villa, three scenarios, one operator.</h2>
+    <p class="invest__lead" data-reveal>Leasehold 30+30, schedule 35 / 35 / 25 / 5. Built for ownership that earns: operator-run, year-round, with a single party accountable for both the asset and the income.</p>
+    <div class="kpis" data-reveal>
+      <div class="kpi"><span class="num">9–13<small>%</small></span><span class="cap">Net yield, p.a. (indicative)</span></div>
+      <div class="kpi"><span class="num">5.9–7.2</span><span class="cap">Years indicative payback</span></div>
+      <div class="kpi"><span class="num">End to end</span><span class="cap">Operator-run, every villa</span></div>
     </div>
-    <a class="slink" href="https://maps.app.goo.gl/QwzXQUyzVxn9oXdW8" target="_blank" rel="noopener" style="margin-top:30px;color:var(--ink)">View on the map</a>
-  </div>
-</section>
-
-<section class="scene reveal" id="investment">
-  <img src="render-living.jpg" alt="Investment - the residence proven by the room">
-  <div class="veil"></div><div class="veil-b"></div>
-  <div class="cap">
-    <h2 class="stitle"><em>A residence</em> <span class="up">proven by the room</span></h2>
-    <p class="lead">Seven of the eight villas were placed during pre-construction. The eighth remains - by design - for a buyer who reads to the end of the brochure. Leasehold 30+30, schedule 35/35/25/5.</p>
-    <button class="slink" data-open-modal="pack" style="background:none;border:0;border-bottom:1px solid currentColor;color:inherit;cursor:pointer;font-family:var(--body);font-size:inherit;padding:0">Download villa pack →</button>
-  </div>
-</section>
-
-<!-- v5: ROI tabulka - 3 scénáře z DOMOPLAN decku page 16 -->
-<section class="roi-block reveal">
-  <div class="head">
-    <div class="eyebrow">The numbers</div>
-    <h2 class="stitle"><em>One villa,</em> <span class="up">three scenarios</span></h2>
-    <p class="lead">A three-bedroom villa, operated short-stay, modelled across low, mid and high demand. Same costs, three nights' price, three occupancy levels.</p>
-  </div>
-  <div class="roi-table">
-    <div class="roi-table__row is-head">
-      <div class="h">3-bedroom villa · USD</div>
-      <div class="h">Low</div>
-      <div class="h mid">Mid</div>
-      <div class="h">High</div>
+    <div class="faq">
+      <details><summary>Do I own the villa outright?</summary><p>You acquire exclusive long-term usage rights to a specific villa, registered with a local notary; the land is held under Indonesian freehold by a local landowner, with a registered 30+30 year lease.</p></details>
+      <details><summary>How long do my rights last?</summary><p>30 years plus a 30-year extension option, up to 60 years. Extension at prevailing market rate; if no agreement, the median of six independent Bali appraisal firms sets the price.</p></details>
+      <details><summary>What return can I expect?</summary><p>The model projects 9–13% p.a. with indicative payback of 5.9–7.2 years for the Bukit villas, depending on occupancy. Subject to operating costs. Projections, not guarantees.</p></details>
+      <details><summary>Can I use the villa myself?</summary><p>Yes, 14 nights per year free outside peak season, bookable at least 60 days ahead. Own use at actual operating cost; peak season at owner rate (−30% off ADR).</p></details>
     </div>
-    <div class="roi-table__row">
-      <div class="k">Average nightly rate</div>
-      <div class="v">$380</div>
-      <div class="v mid">$390</div>
-      <div class="v">$400</div>
-    </div>
-    <div class="roi-table__row">
-      <div class="k">Year-round occupancy</div>
-      <div class="v">70 %</div>
-      <div class="v mid">75 %</div>
-      <div class="v">80 %</div>
-    </div>
-    <div class="roi-table__row">
-      <div class="k">Gross rental income</div>
-      <div class="v">$97,090</div>
-      <div class="v mid">$106,762</div>
-      <div class="v">$116,800</div>
-    </div>
-    <div class="roi-table__row">
-      <div class="k">− Management (20 %)</div>
-      <div class="v">$19,418</div>
-      <div class="v mid">$21,352</div>
-      <div class="v">$23,360</div>
-    </div>
-    <div class="roi-table__row">
-      <div class="k">− Marketing (10 %)</div>
-      <div class="v">$9,709</div>
-      <div class="v mid">$10,676</div>
-      <div class="v">$11,680</div>
-    </div>
-    <div class="roi-table__row">
-      <div class="k">− Utilities &amp; maintenance</div>
-      <div class="v">$4,200</div>
-      <div class="v mid">$4,200</div>
-      <div class="v">$4,200</div>
-    </div>
-    <div class="roi-table__row is-net">
-      <div class="k">Net profit · p.a.</div>
-      <div class="v">$63,763</div>
-      <div class="v mid">$70,534</div>
-      <div class="v">$77,560</div>
-    </div>
-    <div class="roi-table__row">
-      <div class="k">Payback period</div>
-      <div class="v">7.2 yrs</div>
-      <div class="v mid">6.5 yrs</div>
-      <div class="v">5.9 yrs</div>
-    </div>
-    <div class="roi-table__row">
-      <div class="k">ROI</div>
-      <div class="v">13.9 %</div>
-      <div class="v mid">15.4 %</div>
-      <div class="v">16.9 %</div>
-    </div>
-  </div>
-  <p class="roi-source">Investment basis $460,000. Operating costs modelled with detailed reference benchmarks. Capital appreciation excluded - figures show rental return only. Indicative · not a guarantee. Full per-villa pro forma on request.</p>
-</section>
-
-<!-- v5: Floor plan -->
-<section class="plan-block reveal" id="plan">
-  <div class="head">
-    <div class="eyebrow">The plan</div>
-    <h2 class="stitle"><em>108 m² up,</em> <span class="up">87 m² down</span></h2>
-    <p class="lead">Two floors, every bedroom with its own bathroom, terrace opening to the pool. Designed by Studio Identity Designers.</p>
-  </div>
-  <div class="plan-grid">
-    <div class="plan-card">
-      <div class="plan-card__floor">Ground floor</div>
-      <svg viewBox="0 0 280 180" class="plan-card__svg" xmlns="http://www.w3.org/2000/svg" aria-label="Ground floor plan">
-        <g fill="none" stroke="#211E1A" stroke-width="1.4">
-          <rect x="20" y="20" width="240" height="120"/>
-          <line x1="20" y1="80" x2="170" y2="80"/>
-          <line x1="170" y1="20" x2="170" y2="140"/>
-          <line x1="20" y1="80" x2="20" y2="140"/>
-          <line x1="100" y1="80" x2="100" y2="140"/>
-        </g>
-        <g fill="#9F8B6B" opacity=".24">
-          <rect x="20" y="20" width="150" height="60"/>
-          <rect x="170" y="20" width="90" height="120"/>
-        </g>
-        <g fill="#5E5040" font-family="EB Garamond, Georgia, serif" font-style="italic" font-size="9" text-anchor="middle">
-          <text x="95" y="55">Living &amp; kitchen</text>
-          <text x="60" y="115">Garden</text>
-          <text x="135" y="115">Terrace</text>
-          <text x="215" y="85">Pool &amp; deck</text>
-        </g>
-        <g fill="none" stroke="#5E5040" stroke-width=".6" stroke-dasharray="2 2">
-          <line x1="20" y1="155" x2="260" y2="155"/>
-        </g>
-        <text x="140" y="170" fill="#8C8275" font-family="EB Garamond,Georgia,serif" font-size="8" text-anchor="middle">indicative · not to scale</text>
-      </svg>
-      <div class="plan-card__title">Living &amp; outdoor</div>
-      <div class="plan-card__meta"><strong>87 m²</strong> interior · <strong>24 m²</strong> garden</div>
-    </div>
-    <div class="plan-card">
-      <div class="plan-card__floor">First floor</div>
-      <svg viewBox="0 0 280 180" class="plan-card__svg" xmlns="http://www.w3.org/2000/svg" aria-label="First floor plan">
-        <g fill="none" stroke="#211E1A" stroke-width="1.4">
-          <rect x="20" y="20" width="240" height="120"/>
-          <line x1="20" y1="80" x2="170" y2="80"/>
-          <line x1="100" y1="20" x2="100" y2="80"/>
-          <line x1="170" y1="20" x2="170" y2="140"/>
-          <line x1="100" y1="80" x2="100" y2="140"/>
-        </g>
-        <g fill="#9F8B6B" opacity=".24">
-          <rect x="20" y="20" width="80" height="60"/>
-          <rect x="100" y="20" width="70" height="60"/>
-          <rect x="20" y="80" width="80" height="60"/>
-          <rect x="100" y="80" width="70" height="60"/>
-        </g>
-        <g fill="#5E5040" font-family="EB Garamond, Georgia, serif" font-style="italic" font-size="9" text-anchor="middle">
-          <text x="60" y="55">Master suite</text>
-          <text x="135" y="55">Bath</text>
-          <text x="60" y="115">Bedroom</text>
-          <text x="135" y="115">Bath</text>
-          <text x="215" y="85">Terrace</text>
-        </g>
-        <g fill="none" stroke="#5E5040" stroke-width=".6" stroke-dasharray="2 2">
-          <line x1="20" y1="155" x2="260" y2="155"/>
-        </g>
-        <text x="140" y="170" fill="#8C8275" font-family="EB Garamond,Georgia,serif" font-size="8" text-anchor="middle">indicative · not to scale</text>
-      </svg>
-      <div class="plan-card__title">Two bedrooms · two baths</div>
-      <div class="plan-card__meta"><strong>108 m²</strong> interior · <strong>24 m²</strong> terrace</div>
+    <div class="invest__cta-row" data-reveal>
+      <button type="button" class="btn" data-open-modal="pack">Request the villa pack
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     </div>
   </div>
 </section>
 
-<!-- v5: VIP services -->
-<section class="svc-block reveal" id="services">
-  <div class="head">
-    <div class="eyebrow">Included</div>
-    <h2 class="stitle"><em>The villa</em> <span class="up">runs itself</span></h2>
-    <p class="lead">When you arrive, the fridge is stocked, the driver is waiting, and the bath is drawn. Everything below is covered - for owners and their guests.</p>
-  </div>
-  <div class="svc-grid">
-    <div class="svc-row"><div class="n">01</div><div class="t">High-speed Wi-Fi throughout the villa and garden</div></div>
-    <div class="svc-row"><div class="n">02</div><div class="t">Daily housekeeping &amp; turndown</div></div>
-    <div class="svc-row"><div class="n">03</div><div class="t">Resident villa manager - 24/7 contact</div></div>
-    <div class="svc-row"><div class="n">04</div><div class="t">In-house gardener, pool tech &amp; maintenance team</div></div>
-    <div class="svc-row"><div class="n">05</div><div class="t">VIP concierge - restaurants, clubs, ticket reservations</div></div>
-    <div class="svc-row"><div class="n">06</div><div class="t">Private airport transfer on arrival &amp; departure</div></div>
-    <div class="svc-row"><div class="n">07</div><div class="t">Driver with car for the day, on request</div></div>
-    <div class="svc-row"><div class="n">08</div><div class="t">Private chef with table service, on request</div></div>
-    <div class="svc-row"><div class="n">09</div><div class="t">Grocery shopping &amp; pre-arrival stocking</div></div>
-    <div class="svc-row"><div class="n">10</div><div class="t">Scooter &amp; car rental directly at the villa</div></div>
-    <div class="svc-row"><div class="n">11</div><div class="t">Laundry &amp; ironing service</div></div>
-  </div>
-</section>
-
-<!-- v4: Payment milestones -->
-<section class="pay-block reveal" id="payment">
-  <div class="head">
-    <div class="eyebrow">Payment</div>
-    <h2 class="stitle">35 / 35 / 25 / <em>5</em></h2>
-    <p class="lead">Four milestones, tied to verified construction progress. Leasehold registered with a Bali notary, 30 years + 30-year extension option.</p>
-  </div>
-  <div class="pay-wrap">
-    <div class="pay-bar" role="list">
-      <div class="pay-seg" role="listitem">
-        <div class="pay-lab">Reservation</div>
-        <div class="pay-fill">35 %</div>
-        <div class="pay-date">On signing</div>
+<!-- CONTACT -->
+<section class="section section--cream contact" id="enquire" style="border-top:1px solid var(--line)">
+  <div class="wrap contact__grid">
+    <div class="contact__photo" data-reveal>
+      <img src="/villas/render-pool.jpg" alt="Ananta Villas">
+      <div class="contact__credit"><strong>The eighth villa</strong>Still a question</div>
+    </div>
+    <div>
+      <p class="eyebrow" data-reveal>Want in?</p>
+      <h2 class="display" data-split>Seven are spoken for. The eighth is still a question.</h2>
+      <p data-reveal>Ask Kristýna for the deck, the price list, and the yield model for the one villa that's left. Direct line, written or live, same-day reply.</p>
+      <div class="contact__lines" data-reveal>
+        <label>Email</label><a href="mailto:kristyna.pauly@thepersonalresorts.com">kristyna.pauly@thepersonalresorts.com</a>
+        <label>Phone</label><a href="tel:+420607207207">+420 607 207 207</a>
       </div>
-      <div class="pay-seg" role="listitem">
-        <div class="pay-lab">Shell complete</div>
-        <div class="pay-fill">35 %</div>
-        <div class="pay-date">Q1 2027</div>
-      </div>
-      <div class="pay-seg" role="listitem">
-        <div class="pay-lab">Handover</div>
-        <div class="pay-fill">25 %</div>
-        <div class="pay-date">Q3 2027</div>
-      </div>
-      <div class="pay-seg notary" role="listitem">
-        <div class="pay-lab">Notary</div>
-        <div class="pay-fill">5 %</div>
-        <div class="pay-date">Year 1</div>
-      </div>
-    </div>
-    <div class="pay-rule"></div>
-    <div class="pay-facts">
-      <div class="pay-fact">
-        <div class="pay-fact__lab">Leasehold</div>
-        <div class="pay-fact__val">30 + 30 years</div>
-      </div>
-      <div class="pay-fact">
-        <div class="pay-fact__lab">Registered</div>
-        <div class="pay-fact__val">Bali notary · 60-year potential</div>
+      <div style="margin-top:34px" data-reveal>
+        <button type="button" class="btn" data-open-modal="pack">Request the villa pack
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- v5: Detail features -->
-<section class="feat-block reveal" id="features">
-  <div class="head">
-    <div class="eyebrow">Inside the villa</div>
-    <h2 class="stitle"><em>Detail by</em> detail</h2>
-    <p class="lead">The eight villas are built around four design moves - engineered for daily living, not for the brochure.</p>
-  </div>
-  <div class="feat-grid">
-    <div class="feat-card">
-      <div class="feat-n">01</div>
-      <h3>Private pool - the daily appointment</h3>
-      <p>Every villa has its own pool. Glass edge facing the garden, layered planting for shade, an outdoor table that opens to the night sky.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-n">02</div>
-      <h3>Bedroom with floor-to-ceiling glass</h3>
-      <p>Every bedroom has its own bathroom. The master suite opens to a full-height glass wall framing the tropical landscape - free-standing tub, generous walk-in shower.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-n">03</div>
-      <h3>Stone-island kitchen + open living</h3>
-      <p>Massive stone island, full kitchen, large dining table - built for family meals or evening with friends. Naturally flows into the terrace and pool.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-n">04</div>
-      <h3>Vertical light &amp; sky lights</h3>
-      <p>Open galleries and roof lights connect the two floors vertically. Daylight reaches the full height of the interior - a play of light and shadow throughout the day.</p>
-    </div>
-  </div>
-</section>
-
-<footer id="enquire">
-  <div class="foot">
-    <div class="join reveal">
-      <h3 class="stitle"><span class="up">Speak with</span> <em>Kristýna</em></h3>
-      <p>Dr. Kristýna Pauly, CEO Ananta. She'll walk you through the one villa that's left - and the full investor pack.</p>
-      <a class="cta" href="mailto:kristyna.pauly@thepersonalresorts.com?subject=Ananta%20Villas%20-%20enquiry">Write to Kristýna →</a>
-      <p class="sigcap" style="margin-top:16px">Ananta · backed by FIPOX, built by THIERRA</p>
-    </div>
-    <div class="reveal">
-      <h4>Visit</h4>
-      <a href="#setting">The Villas</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#hospitality">Hospitality</a>
-      <a href="#location">Location</a>
-      <a href="#investment">Investment</a>
-    </div>
-    <div class="reveal">
-      <h4>Enquiries</h4>
-      <a href="mailto:kristyna.pauly@thepersonalresorts.com">kristyna.pauly@thepersonalresorts.com</a>
-      <a href="tel:+420607207207">+420 607 207 207</a>
-      <a href="https://wa.me/420739685681" target="_blank" rel="noopener">WhatsApp +420 739 685 681</a>
-      <p class="ln" style="color:var(--soft);margin-top:8px">Ananta<br>Kollárova 3150/2, Brno, CZ</p>
-    </div>
-  </div>
-  <div class="footbar">
-    <span>© 2026 Ananta · member of FIPOX</span>
-    <span class="footbar-right"><span>Ananta Villas · N°01 · Desa Kutuh, Bali</span><span>Follow us!</span><a class="social-ig" href="https://www.instagram.com/anantavillasbali/" target="_blank" rel="noopener noreferrer" aria-label="Ananta on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.15" fill="currentColor" stroke="none"/></svg></a></span>
-  </div>
+<footer class="foot">
+  <span class="foot__brand">Anāntā</span>
+  <span class="foot__note">Ananta Villas · Desa Kutuh · Nusa Dua · Bali. A boutique resort developer, built by THIERRA, backed by FIPOX. Redesign preview, not the live site.</span>
+  <a class="social-ig" href="https://www.instagram.com/anantavillasbali/" target="_blank" rel="noopener noreferrer" aria-label="Ananta on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.15" fill="currentColor" stroke="none"/></svg></a>
 </footer>
 
-<script>
-const isMobile = window.matchMedia('(max-width:768px)').matches || window.matchMedia('(hover:none)').matches || window.matchMedia('(pointer:coarse)').matches;
-const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const nav = document.getElementById('nav');
-const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > 40); };
-window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-
-const burger = document.getElementById('burger'), mm = document.getElementById('mm'), mmx = document.getElementById('mmx');
-burger.addEventListener('click', ()=> mm.classList.add('open'));
-mmx.addEventListener('click', ()=> mm.classList.remove('open'));
-mm.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mm.classList.remove('open')));
-
-const reveals = document.querySelectorAll('.reveal');
-if(!isMobile && !prefersReduce && 'IntersectionObserver' in window){
-  const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-  reveals.forEach(r=> io.observe(r));
-} else { reveals.forEach(r=> r.classList.add('in')); }
-</script>
-
-<!-- Modal Investor Pack -->
+<!-- Lead capture modal -->
 <div class="modal" id="pack">
   <div class="modal__box">
     <button class="modal__x" data-close-modal>Close ×</button>
     <div id="packForm">
       <h3>Villa pack</h3>
-      <p class="lead">Get the deck. PDF · the full investor pack. Instant access the moment you confirm.</p>
+      <p class="modal__lead">Tell us where to send it. Instant access the moment you confirm.</p>
       <form data-lead-form data-project="Ananta Villas">
-        <label for="pn">Name</label>
-        <input type="text" id="pn" name="name" required>
-        <label for="pe">Email</label>
-        <input type="email" id="pe" name="email" required>
-        <label for="pc">Country</label>
-        <input type="text" id="pc" name="country">
-        <!-- honeypot: hidden from real users; bots fill it and get silently dropped -->
+        <label for="pn">Name</label><input type="text" id="pn" name="name" required>
+        <label for="pe">Email</label><input type="email" id="pe" name="email" required>
+        <label for="pc">Country</label><input type="text" id="pc" name="country">
         <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <!-- PLACEHOLDER privacy link (#privacy): Tyna dodá /privacy stránku + text, pak swapnout -->
+        <!-- PLACEHOLDER privacy link (#privacy): Tyna dodá /privacy + text -->
         <label class="modal__check"><input type="checkbox" name="gdpr_consent" required> <span>I agree to the processing of my personal data for the purpose of receiving the requested investor materials and being contacted regarding my inquiry. <a href="#privacy">Privacy Policy</a>. <em>(required)</em></span></label>
         <label class="modal__check"><input type="checkbox" name="marketing_consent"> <span>I would also like to receive occasional news, updates and investment opportunities from The Personal Resorts BALI s.r.o. I understand that I can unsubscribe at any time. <em>(optional)</em></span></label>
         <div class="cf-turnstile-target"></div>
@@ -783,17 +171,20 @@ if(!isMobile && !prefersReduce && 'IntersectionObserver' in window){
       </form>
     </div>
     <div id="packSuccess" class="modal__success" style="display:none">
-      <p>✓</p>
+      <p class="tick">✓</p>
       <h3>Here is your deck.</h3>
-      <p class="lead">Click below to open the villa investor pack. We'll be in touch shortly.</p>
-      <a class="slink" href="Ananta_Villas_Investor_Pack.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px">Open villa pack →</a>
+      <p class="modal__lead">Open the villa investor pack. We'll be in touch shortly.</p>
+      <a class="modal__pack-link" href="/villas/Ananta_Villas_Investor_Pack.pdf" target="_blank" rel="noopener">Open villa pack →</a>
     </div>
   </div>
 </div>
 
-<!-- Lead capture: shared handler + Cloudflare Turnstile. The Power Automate token lives
-     server-side in /api/lead — never in client JS. -->
+<script src="/vendor/gsap.min.js"></script>
+<script src="/vendor/ScrollTrigger.min.js"></script>
+<script src="/vendor/SplitText.min.js"></script>
+<script src="/vendor/lenis.min.js"></script>
+<script src="/site.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit" async defer></script>
-<script src="/lead-capture.js" defer></script>
+<script src="/lead-capture.js"></script>
 </body>
 </html>

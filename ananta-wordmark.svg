@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" role="img" aria-label="ANANTA" viewBox="29.75 206.25 782.5 153">
+<defs>
+<clipPath id="clip_1">
+<path transform="matrix(1,0,0,-1,0,595.276)" d="M0 595.276H841.89V0H0Z"/>
+</clipPath>
+<path id="font_2_32" d="M.125 0H.04800415L.31799317 .66000369 .6329956 0H.55599978L.32099916 .4900055 .125 0Z"/>
+<path id="font_2_45" d="M.125 0H.04800415V.66000369L.48399354 .18499756V.66000369H.56199648V0L.125 .47399903V0Z"/>
+<path id="font_2_51" d="M.3480072 0H.2709961V.58299258H.04800415V.66000369H.5549927V.58299258H.3480072V0Z"/>
+<path id="font_2_1" d=""/>
+<path id="font_3_3" d="M0 0V0Z"/>
+</defs>
+<g inkscape:groupmode="layer" inkscape:label="Layer 1">
+<g clip-path="url(#clip_1)">
+<use data-text="A" xlink:href="#font_2_32" transform="matrix(153.3603,0,0,-153.3603,28.4458,353.1647)" fill="currentColor"/>
+<use data-text="N" xlink:href="#font_2_45" transform="matrix(153.3603,0,0,-153.3603,177.12863,353.1647)" fill="currentColor"/>
+<use data-text="A" xlink:href="#font_2_32" transform="matrix(153.3603,0,0,-153.3603,314.99958,353.1647)" fill="currentColor"/>
+<use data-text="N" xlink:href="#font_2_45" transform="matrix(153.3603,0,0,-153.3603,463.6824,353.1647)" fill="currentColor"/>
+<use data-text="T" xlink:href="#font_2_51" transform="matrix(153.3603,0,0,-153.3603,601.4767,353.1647)" fill="currentColor"/>
+<use data-text="A" xlink:href="#font_2_32" transform="matrix(153.3603,0,0,-153.3603,709.05899,353.1647)" fill="currentColor"/>
+<use data-text=" " xlink:href="#font_2_1" transform="matrix(89.4601,0,0,-89.4601,826.48,353.1647)" fill="currentColor"/>
+<use data-text=" " xlink:href="#font_3_3" transform="matrix(89.4601,0,0,-89.4601,860.9221,353.1647)" fill="currentColor"/>
+</g>
+<path transform="matrix(1,0,0,-1,323.1587,217.26929)" stroke-width="10" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="currentColor" d="M0 0H88.228"/>
+</g>
+</svg>

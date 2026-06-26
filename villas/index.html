@@ -291,6 +291,29 @@ footer{background:var(--cream2);padding:clamp(70px,10vh,120px) clamp(18px,4vw,56
   .hero-cap h1{font-size:34px}
   .scene .cap h2{font-size:30px}
 }
+/* Lead-capture modal (shared markup with apartments; same CSS vars) */
+.modal{position:fixed;inset:0;background:rgba(20,18,15,.65);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal.open{display:flex}
+.modal__box{background:var(--cream);max-width:560px;width:100%;padding:46px 38px;position:relative;max-height:90vh;overflow-y:auto}
+.modal__x{position:absolute;top:14px;right:18px;background:none;border:0;cursor:pointer;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+.modal h3{font-family:var(--serif);font-weight:500;font-size:34px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.modal .lead{color:var(--soft);font-size:15px;margin-bottom:24px}
+.modal label{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin:14px 0 4px}
+.modal input,.modal select{width:100%;padding:10px 0;background:none;border:0;border-bottom:1px solid var(--line);font-family:var(--body);font-size:16px;color:var(--ink);outline:none}
+.modal input:focus,.modal select:focus{border-bottom-color:var(--ink)}
+.modal__check{display:flex;align-items:flex-start;gap:10px;margin-top:18px;font-size:13px;color:var(--soft);cursor:pointer}
+.modal__check input{width:auto;margin-top:5px;flex-shrink:0}
+.modal__check span{flex:1;text-transform:none;letter-spacing:normal;line-height:1.5}
+.modal__check em{font-style:normal;opacity:.55;font-size:11px;letter-spacing:.04em}
+.modal__check a{color:var(--ink);text-decoration:underline}
+.modal__send{margin-top:24px;width:100%;background:var(--ink);color:var(--cream);border:0;padding:14px;font-family:var(--body);font-size:12px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.modal__send:hover{background:#000}
+.modal__success{text-align:center}
+.modal__success p{font-size:48px;color:#8b9779;margin-bottom:10px}
+.modal__error{margin-top:14px;color:#a23b3b;font-size:13px;line-height:1.45}
+.hp-field{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
+.cf-turnstile-target{margin-top:18px;min-height:65px}
+@media(max-width:560px){.modal__box{padding:36px 26px}.modal h3{font-size:28px}}
 </style>
 </head>
 <body>
@@ -440,7 +463,7 @@ footer{background:var(--cream2);padding:clamp(70px,10vh,120px) clamp(18px,4vw,56
   <div class="cap">
     <h2 class="stitle"><em>A residence</em> <span class="up">proven by the room</span></h2>
     <p class="lead">Seven of the eight villas were placed during pre-construction. The eighth remains - by design - for a buyer who reads to the end of the brochure. Leasehold 30+30, schedule 35/35/25/5.</p>
-    <a class="slink" href="Ananta_Villas_Investor_Pack.pdf" target="_blank" rel="noopener">Download villa pack →</a>
+    <button class="slink" data-open-modal="pack" style="background:none;border:0;border-bottom:1px solid currentColor;color:inherit;cursor:pointer;font-family:var(--body);font-size:inherit;padding:0">Download villa pack →</button>
   </div>
 </section>
 
@@ -732,5 +755,43 @@ if(!isMobile && !prefersReduce && 'IntersectionObserver' in window){
   reveals.forEach(r=> io.observe(r));
 } else { reveals.forEach(r=> r.classList.add('in')); }
 </script>
+
+<!-- Modal Investor Pack -->
+<div class="modal" id="pack">
+  <div class="modal__box">
+    <button class="modal__x" data-close-modal>Close ×</button>
+    <div id="packForm">
+      <h3>Villa pack</h3>
+      <p class="lead">Get the deck. PDF · the full investor pack. Instant access the moment you confirm.</p>
+      <form data-lead-form data-project="Ananta Villas">
+        <label for="pn">Name</label>
+        <input type="text" id="pn" name="name" required>
+        <label for="pe">Email</label>
+        <input type="email" id="pe" name="email" required>
+        <label for="pc">Country</label>
+        <input type="text" id="pc" name="country">
+        <!-- honeypot: hidden from real users; bots fill it and get silently dropped -->
+        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <!-- PLACEHOLDER privacy link (#privacy): Tyna dodá /privacy stránku + text, pak swapnout -->
+        <label class="modal__check"><input type="checkbox" name="gdpr_consent" required> <span>I agree to the processing of my personal data for the purpose of receiving the requested investor materials and being contacted regarding my inquiry. <a href="#privacy">Privacy Policy</a>. <em>(required)</em></span></label>
+        <label class="modal__check"><input type="checkbox" name="marketing_consent"> <span>I would also like to receive occasional news, updates and investment opportunities from The Personal Resorts BALI s.r.o. I understand that I can unsubscribe at any time. <em>(optional)</em></span></label>
+        <div class="cf-turnstile-target"></div>
+        <p data-lead-error class="modal__error" style="display:none">Something went wrong and your request was not sent. Please try again.</p>
+        <button class="modal__send" type="submit">Send me the deck →</button>
+      </form>
+    </div>
+    <div id="packSuccess" class="modal__success" style="display:none">
+      <p>✓</p>
+      <h3>Here is your deck.</h3>
+      <p class="lead">Click below to open the villa investor pack. We'll be in touch shortly.</p>
+      <a class="slink" href="Ananta_Villas_Investor_Pack.pdf" target="_blank" rel="noopener" style="display:inline-block;margin-top:20px">Open villa pack →</a>
+    </div>
+  </div>
+</div>
+
+<!-- Lead capture: shared handler + Cloudflare Turnstile. The Power Automate token lives
+     server-side in /api/lead — never in client JS. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit" async defer></script>
+<script src="/lead-capture.js" defer></script>
 </body>
 </html>

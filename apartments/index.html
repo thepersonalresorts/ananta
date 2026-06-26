@@ -198,6 +198,12 @@ footer{background:var(--cream2);padding:clamp(70px,10vh,120px) clamp(18px,4vw,56
 .modal__success{text-align:center}
 .modal__success p{font-size:48px;color:#8b9779;margin-bottom:10px}
 @media(max-width:560px){.modal__box{padding:36px 26px}.modal h3{font-size:28px}}
+.modal__check span{flex:1;text-transform:none;letter-spacing:normal;line-height:1.5}
+.modal__check em{font-style:normal;opacity:.55;font-size:11px;letter-spacing:.04em}
+.modal__check a{color:var(--ink);text-decoration:underline}
+.modal__error{margin-top:14px;color:#a23b3b;font-size:13px;line-height:1.45}
+.hp-field{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
+.cf-turnstile-target{margin-top:18px;min-height:65px}
 
 /* ===== New blocks C1-C9 ===== */
 .blk-head{text-align:center;max-width:820px;margin:0 auto 56px}
@@ -532,7 +538,7 @@ footer{background:var(--cream2);padding:clamp(70px,10vh,120px) clamp(18px,4vw,56
   <div class="cap">
     <h2 class="stitle"><em>From</em> <span class="up">$191K</span></h2>
     <p class="lead">Phase 1 VIP entry pricing −4 % for first nine buyers. Standard 30 / 40 / 30 milestone schedule (or full cash −5 %). Detailed pro-forma, unit availability and full investor pack on request.</p>
-    <button class="slink" id="openPack" style="background:none;border:0;border-bottom:1px solid #fff;color:#fff;cursor:pointer;font-family:var(--body)">Download investor pack →</button>
+    <button class="slink" id="openPack" data-open-modal="pack" style="background:none;border:0;border-bottom:1px solid #fff;color:#fff;cursor:pointer;font-family:var(--body)">Download investor pack →</button>
   </div>
 </section>
 
@@ -957,19 +963,24 @@ footer{background:var(--cream2);padding:clamp(70px,10vh,120px) clamp(18px,4vw,56
 <!-- Modal Investor Pack -->
 <div class="modal" id="pack">
   <div class="modal__box">
-    <button class="modal__x" id="packX">Close ×</button>
+    <button class="modal__x" id="packX" data-close-modal>Close ×</button>
     <div id="packForm">
       <h3>Investor pack</h3>
-      <p class="lead">Get the deck. PDF · 23 pages. Sent straight to your inbox.</p>
-      <form id="packF">
+      <p class="lead">Get the deck. PDF · 23 pages. Instant access the moment you confirm.</p>
+      <form id="packF" data-lead-form data-project="Ananta Canggu">
         <label for="pn">Name</label>
-        <input type="text" id="pn" required>
+        <input type="text" id="pn" name="name" required>
         <label for="pe">Email</label>
-        <input type="email" id="pe" required>
+        <input type="email" id="pe" name="email" required>
         <label for="pc">Country</label>
-        <input type="text" id="pc">
-        <label class="modal__check"><input type="checkbox" required> I agree to the processing of my personal data for the purpose of receiving the investor pack and being contacted about my inquiry.</label>
-        <label class="modal__check"><input type="checkbox"> I'd also like to receive occasional updates about Ananta. (Optional - unsubscribe any time.)</label>
+        <input type="text" id="pc" name="country">
+        <!-- honeypot: hidden from real users; bots fill it and get silently dropped -->
+        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <!-- PLACEHOLDER privacy link (#privacy): Tyna dodá /privacy stránku + text, pak swapnout -->
+        <label class="modal__check"><input type="checkbox" name="gdpr_consent" required> <span>I agree to the processing of my personal data for the purpose of receiving the requested investor materials and being contacted regarding my inquiry. <a href="#privacy">Privacy Policy</a>. <em>(required)</em></span></label>
+        <label class="modal__check"><input type="checkbox" name="marketing_consent"> <span>I would also like to receive occasional news, updates and investment opportunities from The Personal Resorts BALI s.r.o. I understand that I can unsubscribe at any time. <em>(optional)</em></span></label>
+        <div class="cf-turnstile-target"></div>
+        <p data-lead-error class="modal__error" style="display:none">Something went wrong and your request was not sent. Please try again.</p>
         <button class="modal__send" type="submit">Send me the deck →</button>
       </form>
     </div>
@@ -1000,26 +1011,11 @@ if(!isMobile && !prefersReduce && 'IntersectionObserver' in window){
   const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
   reveals.forEach(r=> io.observe(r));
 } else { reveals.forEach(r=> r.classList.add('in')); }
-
-// Modal investor pack
-const pack = document.getElementById('pack');
-const openPack = document.getElementById('openPack');
-const packX = document.getElementById('packX');
-const packF = document.getElementById('packF');
-const packForm = document.getElementById('packForm');
-const packSuccess = document.getElementById('packSuccess');
-openPack.addEventListener('click', ()=> pack.classList.add('open'));
-packX.addEventListener('click', ()=> { pack.classList.remove('open'); setTimeout(()=>{ packForm.style.display=''; packSuccess.style.display='none'; packF.reset(); }, 400); });
-pack.addEventListener('click', (e)=> { if(e.target===pack) packX.click(); });
-packF.addEventListener('submit', async (e)=>{
-  e.preventDefault();
-  const data = { name: document.getElementById('pn').value, email: document.getElementById('pe').value, country: document.getElementById('pc').value, project: 'Ananta Canggu', timestamp: new Date().toISOString() };
-  try{
-    await fetch('https://default9c77dc951a604ba88c7a7ce2c0edde.26.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/1cdbad07114741dd8d7b527877225428/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2aP8kayrE0UZObHPtsaOlzk9B-fymMZWpEuWzTOg87M', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
-  } catch(err){}
-  packForm.style.display='none';
-  packSuccess.style.display='block';
-});
 </script>
+
+<!-- Lead capture: shared handler + Cloudflare Turnstile. The Power Automate token lives
+     server-side in /api/lead — never in client JS. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit" async defer></script>
+<script src="/lead-capture.js" defer></script>
 </body>
 </html>

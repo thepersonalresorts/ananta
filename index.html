@@ -28,11 +28,13 @@
 <div class="lab-flag">redesign · not live</div>
 
 <nav class="nav" id="nav">
-  <a class="nav__brand" href="/">Anāntā</a>
+  <a class="nav__brand" href="/"><span class="nav__logo" role="img" aria-label="Ananta"></span></a>
   <div class="nav__links">
-    <a href="/villas/">The Villas</a>
-    <a href="/apartments/">Canggu</a>
+    <a href="/villas/">In Construction</a>
+    <a href="/apartments/">In Preparation</a>
     <a href="#invest">Invest</a>
+    <a href="#partners">Partners</a>
+    <a href="https://www.instagram.com/anantavillasbali/" target="_blank" rel="noopener">News</a>
   </div>
   <a class="nav__cta" href="#enquire">Enquire</a>
 </nav>
@@ -47,9 +49,7 @@
   </div>
   <div class="hero__scrim"></div>
   <div class="hero__inner">
-    <p class="eyebrow" data-reveal>A boutique resort brand · Bali</p>
     <h1 class="display" data-split>Some places you visit. One or two, you never quite leave.</h1>
-    <p class="hero__sub" data-reveal>Eight villas on the Bukit cliffs. Thirty-six residences above the Canggu surf. Built to own, run to pay.</p>
   </div>
   <div class="scrollcue" aria-hidden="true">Scroll<span></span></div>
 </header>
@@ -57,7 +57,6 @@
 <!-- PROLOG -->
 <section class="prolog">
   <div class="wrap">
-    <p class="eyebrow" data-reveal>A boutique resort brand from Bali</p>
     <h2 class="prolog__head display" data-split>Built to own. Run to pay.</h2>
     <div class="prolog__body">
       <p data-reveal>Ananta is a small collection of resort residences on Bali, branded, built, and operated end to end. Owners hold a deed; we run the lobby, the linens, and the books.</p>
@@ -71,49 +70,85 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
-<a class="project" href="/villas/">
-  <div class="project__media"><img src="/villas/render-aerial.jpg" alt="Ananta Villas, Bukit" loading="lazy"></div>
-  <div class="project__scrim"></div>
-  <div class="project__body">
-    <div>
-      <div class="project__status">In construction</div>
-      <h2 class="project__name display" data-split>Ananta Villas</h2>
-      <span class="project__cta">View project →</span>
+<!-- PROJECTS — sticky showcases, project photos cross-fade on scroll, click to view -->
+<section class="showcase" data-showcase>
+  <a class="showcase__sticky" href="/villas/">
+    <div class="showcase__media">
+      <img class="showcase__img" src="/villas/render-aerial.jpg" alt="Ananta Villas, Bukit cliff" loading="lazy">
+      <img class="showcase__img" src="/villas/render-living.jpg" alt="" loading="lazy">
+      <img class="showcase__img" src="/villas/render-bedroom.jpg" alt="" loading="lazy">
+      <img class="showcase__img" src="/villas/render-kitchen.jpg" alt="" loading="lazy">
     </div>
-    <ul class="project__meta" data-reveal>
-      <li>Private villas · cliff front</li>
-      <li>Desa Kutuh · Nusa Dua · Bali</li>
-      <li>1 of 8 remains · 2027 handover</li>
-    </ul>
-  </div>
-</a>
-
-<a class="project" href="/apartments/">
-  <div class="project__media"><img src="/apartments/render-rooftop.jpg" alt="Ananta Canggu" loading="lazy"></div>
-  <div class="project__scrim"></div>
-  <div class="project__body">
-    <div>
-      <div class="project__status">In preparation</div>
-      <h2 class="project__name display" data-split>Ananta Canggu</h2>
-      <span class="project__cta">View project →</span>
+    <div class="showcase__scrim"></div>
+    <div class="showcase__count">Bukit · Nusa Dua</div>
+    <div class="showcase__body">
+      <div>
+        <div class="project__status">In construction</div>
+        <h2 class="project__name display" data-split>Ananta Villas</h2>
+        <span class="project__cta">View project →</span>
+      </div>
+      <ul class="project__meta" data-reveal>
+        <li>Private villas · cliff front</li>
+        <li>Desa Kutuh · Nusa Dua · Bali</li>
+        <li>1 of 8 remains · 2027 handover</li>
+      </ul>
     </div>
-    <ul class="project__meta" data-reveal>
-      <li>Branded residences · 36 units</li>
-      <li>Padang Linjong · Canggu · Bali</li>
-      <li>From $191k · keys Q2 2028</li>
-    </ul>
-  </div>
-</a>
+  </a>
+</section>
 
-<!-- LIFESTYLE -->
+<section class="showcase" data-showcase>
+  <a class="showcase__sticky" href="/apartments/">
+    <div class="showcase__media">
+      <img class="showcase__img" src="/apartments/render-rooftop.jpg" alt="Ananta Canggu" loading="lazy">
+      <img class="showcase__img" src="/apartments/render-palms.jpg" alt="" loading="lazy">
+      <img class="showcase__img" src="/apartments/render-lounge.jpg" alt="" loading="lazy">
+      <img class="showcase__img" src="/apartments/render-bedroom.jpg" alt="" loading="lazy">
+    </div>
+    <div class="showcase__scrim"></div>
+    <div class="showcase__count">Padang Linjong · Canggu</div>
+    <div class="showcase__body">
+      <div>
+        <div class="project__status">In preparation</div>
+        <h2 class="project__name display" data-split>Ananta Canggu</h2>
+        <span class="project__cta">View project →</span>
+      </div>
+      <ul class="project__meta" data-reveal>
+        <li>Branded residences · 36 units</li>
+        <li>Padang Linjong · Canggu · Bali</li>
+        <li>From $191k · keys Q2 2028</li>
+      </ul>
+    </div>
+  </a>
+</section>
+
+<!-- LIFESTYLE — a day on the island -->
 <section class="panel">
-  <div class="panel__media" data-clip><img src="/villas/render-pool.jpg" alt="The cliff at first light" loading="lazy"></div>
+  <div class="panel__media" data-clip><img src="/villas/render-pool.jpg" alt="The cliff pool at first light" loading="lazy"></div>
   <div class="panel__scrim"></div>
   <div class="panel__cap">
     <p class="panel__time" data-reveal>06:30 · First light</p>
     <h2 class="panel__title display" data-split>The sea before anyone else</h2>
     <p class="panel__sensory sensory" data-reveal>The tide is out at Bingin. The pool holds the warmth of last night. No one is awake but you, and the water.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel__media" data-clip><img src="/apartments/render-lounge.jpg" alt="The beach club in the gold hour" loading="lazy"></div>
+  <div class="panel__scrim"></div>
+  <div class="panel__cap">
+    <p class="panel__time" data-reveal>16:40 · The gold hour</p>
+    <h2 class="panel__title display" data-split>When the light turns to amber</h2>
+    <p class="panel__sensory sensory" data-reveal>Frangipani on the path. The afternoon goes amber, then rose. Somewhere below, the last longboards come in.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel__media" data-clip><img src="/villas/render-living.jpg" alt="The long table in the evening" loading="lazy"></div>
+  <div class="panel__scrim"></div>
+  <div class="panel__cap">
+    <p class="panel__time" data-reveal>20:00 · The long table</p>
+    <h2 class="panel__title display" data-split>The part the brochure never sold</h2>
+    <p class="panel__sensory sensory" data-reveal>Dinner under the open roof, salt still on your skin. Nobody is checking the time. This is the part you came for.</p>
   </div>
 </section>
 
@@ -144,7 +179,7 @@
 </section>
 
 <!-- PARTNERS -->
-<section class="section section--cream" style="border-top:1px solid var(--line)">
+<section class="section section--cream" id="partners" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <p class="eyebrow" data-reveal>For agencies &amp; brokers</p>
     <h2 class="prolog__head display" data-split>Sell with us.</h2>

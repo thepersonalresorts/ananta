@@ -57,6 +57,23 @@
     if (img) gsap.to(img, { scale: 1, duration: 1.7, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 82%" } });
   });
 
+  // ---------- project showcase: crossfade stacked images while a sticky panel holds ----------
+  // The section is tall; .showcase__sticky is position:sticky; images cross-fade with scroll.
+  // Native sticky (not GSAP pin) keeps it smooth on mobile.
+  gsap.utils.toArray("[data-showcase]").forEach(function (sc) {
+    var imgs = sc.querySelectorAll(".showcase__img");
+    if (imgs.length < 2) return;
+    gsap.set(imgs, { opacity: 0 });
+    gsap.set(imgs[0], { opacity: 1 });
+    var tl = gsap.timeline({ scrollTrigger: { trigger: sc, start: "top top", end: "bottom bottom", scrub: 0.6 } });
+    for (var i = 1; i < imgs.length; i++) {
+      // gentle ken-burns on the incoming image as it fades over the previous one
+      gsap.set(imgs[i], { scale: 1.08 });
+      tl.to(imgs[i], { opacity: 1, duration: 1 }, ">")
+        .to(imgs[i], { scale: 1, duration: 1.4 }, "<");
+    }
+  });
+
   // ---------- text + fade reveals (after fonts so line-breaks measure right) ----------
   function setupTypeReveals() {
     var vh = window.innerHeight;

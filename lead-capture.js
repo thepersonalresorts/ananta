@@ -14,9 +14,9 @@
 (function () {
   "use strict";
 
-  // PLACEHOLDER: Cloudflare Turnstile TEST sitekey (always passes, visible widget). David
-  // swaps the real sitekey here once the widget is provisioned in the dashboard.
-  var TURNSTILE_SITEKEY = "1x00000000000000000000AA";
+  // Cloudflare Turnstile sitekey for the Ananta lead forms (public; safe in client JS).
+  // Pairs with the TURNSTILE_SECRET env var that the /api/lead function verifies against.
+  var TURNSTILE_SITEKEY = "0x4AAAAAADrWS2_BkgjuQ6FP";
   // Keep in sync with CONSENT_VERSION in functions/api/lead.js.
   var CONSENT_VERSION = "v1-2026-06-26";
 

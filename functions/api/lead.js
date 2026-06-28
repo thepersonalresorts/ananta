@@ -1,22 +1,23 @@
 // functions/api/lead.js — Cloudflare Pages Function served at /api/lead. Proxy between the
-// public lead form and the Power Automate flow that writes Ananta_Leads.xlsx.
+// public lead form and the Google Sheet (via an Apps Script web app) that stores the leads.
 //
 // WHY THIS EXISTS: the old setup POSTed straight from client JS to the Power Automate
 // webhook, so the sig token sat in view-source. Anyone could spam the flow, exhaust its
 // quota, or inject third-party PII into the controller's records. This function keeps the
-// token server-side (env, never in the repo) and adds an origin check, honeypot drop,
-// per-IP rate limit, Turnstile verification, and Excel/CSV formula-injection sanitisation
-// before forwarding. Server stamps the timestamp + consent version so neither is client-
+// destination + secret server-side (env, never in the repo) and adds an origin check, honeypot
+// drop, per-IP rate limit, Turnstile verification, and Excel/CSV formula-injection sanitisation
+// before writing the lead. Server stamps the timestamp + consent version so neither is client-
 // trusted. See council verdict on the Notion Bali page (update 26.6.2026).
 //
 // PLACEHOLDERS until David sets them in the Cloudflare Pages dashboard env:
-//   PA_WEBHOOK_URL   — full Power Automate URL incl. the REGENERATED sig token (required)
+//   GSHEET_WEBHOOK_URL   — Apps Script web-app /exec URL that appends the lead row (required)
+//   GSHEET_SHARED_SECRET — secret sent in the body; the Apps Script rejects writes without it
 //   TURNSTILE_SECRET — Cloudflare Turnstile secret key (falls back to the always-pass TEST
 //                      secret below, i.e. NO bot protection, until set)
 //   ADMIN_EMAIL      — optional override (defaults to kristyna.pauly@thepersonalresorts.com)
 //   ALLOWED_ORIGINS  — optional extra comma-separated origins (same-origin always allowed)
 //   LEAD_DEBUG       — set to "1" ONLY in local testing; makes the function echo the
-//                      assembled payload instead of forwarding. NEVER set in production.
+//                      assembled payload instead of writing the lead. NEVER set in production.
 
 // Consent wording locked by Tyna (Notion Bali, 26.6). Stored verbatim with each lead so we
 // can prove exactly what the subject agreed to. Bump CONSENT_VERSION if the wording changes.
@@ -155,18 +156,24 @@ export async function onRequestPost(context) {
   // Local-test echo only (LEAD_DEBUG=1). Never set in production.
   if (env.LEAD_DEBUG === "1") return json({ ok: true, _debug: payload }, 200, origin);
 
-  // 8. Forward to Power Automate. The token lives ONLY in env.PA_WEBHOOK_URL, never in the repo.
-  const paUrl = env.PA_WEBHOOK_URL;
-  if (!paUrl) return json({ ok: false, error: "not_configured" }, 502, origin);
+  // 8. Write the lead to the Google Sheet via the Apps Script web app. The /exec URL and the
+  //    shared secret live ONLY in env, never in the repo; the secret gates the public web-app URL.
+  const sheetUrl = env.GSHEET_WEBHOOK_URL;
+  if (!sheetUrl) return json({ ok: false, error: "not_configured" }, 502, origin);
   try {
-    const r = await fetch(paUrl, {
+    const r = await fetch(sheetUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ ...payload, secret: env.GSHEET_SHARED_SECRET || "" }),
     });
-    if (!r.ok) return json({ ok: false, error: "upstream_failed" }, 502, origin);
+    // Apps Script web apps 302-redirect to googleusercontent.com; fetch follows it, so a healthy
+    // write ends as HTTP 200 with a {ok:true} body. Treat any non-2xx or non-ok body as failure.
+    if (!r.ok) return json({ ok: false, error: "sheet_failed" }, 502, origin);
+    let result;
+    try { result = await r.json(); } catch { result = null; }
+    if (!result || result.ok !== true) return json({ ok: false, error: "sheet_failed" }, 502, origin);
   } catch {
-    return json({ ok: false, error: "upstream_unreachable" }, 502, origin);
+    return json({ ok: false, error: "sheet_unreachable" }, 502, origin);
   }
 
   return json({ ok: true }, 200, origin);

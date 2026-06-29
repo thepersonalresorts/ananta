@@ -117,13 +117,15 @@
     });
   });
 
-  // ---------- text + fade reveals (after fonts so line-breaks measure right) ----------
-  function setupTypeReveals() {
-    var vh = window.innerHeight;
-
-    // line-mask headlines. SplitText's native mask:"lines" wraps each line in a clip
-    // container; we slide the lines up out of it. Above-fold plays on load, rest on scroll.
-    gsap.utils.toArray("[data-split]").forEach(function (el) {
+  // ---------- hero headline: a single line-mask entrance on load ----------
+  // Per David: the per-text scroll reveals are gone — all body/section text renders static,
+  // so the page's motion is carried by the imagery (clip reveal, parallax, showcase). The one
+  // exception is the hero headline, which gets a one-time "curtain up" on load: it plays once
+  // and then rests, so it never adds to the scroll-fatigue David was reacting to. Runs after
+  // fonts so the line breaks measure right.
+  function revealHero() {
+    var el = document.querySelector("[data-hero-line]");
+    if (el) {
       var targets;
       if (hasSplit) {
         var split = new SplitText(el, { type: "lines", mask: "lines", linesClass: "ln" });
@@ -133,36 +135,23 @@
       }
       gsap.set(el, { autoAlpha: 1 });
       gsap.set(targets, { yPercent: 115 });
-      var inView = el.getBoundingClientRect().top < vh * 0.9;
-      var vars = { yPercent: 0, duration: 1.15, ease: "power3.out", stagger: 0.09 };
-      if (inView) vars.delay = 0.15;
-      else vars.scrollTrigger = { trigger: el, start: "top 86%" };
-      // after the line-mask reveal, un-clip the masks so descenders (y, g, p, q) aren't cut off
-      vars.onComplete = function () {
-        targets.forEach(function (l) { if (l && l.parentNode) l.parentNode.style.overflow = "visible"; });
-      };
-      gsap.to(targets, vars);
-    });
-
-    // fade-up reveals
-    gsap.utils.toArray("[data-reveal]").forEach(function (el) {
-      gsap.set(el, { autoAlpha: 0, y: 26 });
-      var inView = el.getBoundingClientRect().top < vh * 0.9;
-      var vars = { autoAlpha: 1, y: 0, duration: 1, ease: "power2.out" };
-      if (inView) vars.delay = 0.1;
-      else vars.scrollTrigger = { trigger: el, start: "top 90%" };
-      gsap.to(el, vars);
-    });
-
-    ScrollTrigger.refresh();
+      gsap.to(targets, {
+        yPercent: 0, duration: 1.15, ease: "power3.out", stagger: 0.09, delay: 0.15,
+        // after the reveal, un-clip the masks so descenders (y, g, p, q) aren't cut off
+        onComplete: function () {
+          targets.forEach(function (l) { if (l && l.parentNode) l.parentNode.style.overflow = "visible"; });
+        }
+      });
+    }
+    ScrollTrigger.refresh(); // fonts/markup settled — let pinned/scrub triggers re-measure
   }
 
   if (document.fonts && document.fonts.ready) {
     var done = false;
-    var go = function () { if (done) return; done = true; setupTypeReveals(); };
+    var go = function () { if (done) return; done = true; revealHero(); };
     document.fonts.ready.then(go);
     setTimeout(go, 1200); // fallback if fonts.ready stalls
   } else {
-    setupTypeReveals();
+    revealHero();
   }
 })();

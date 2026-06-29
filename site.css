@@ -223,7 +223,7 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
   .panel,.hero,.project{min-height:520px}
 }
 @media(prefers-reduced-motion:reduce){
-  html.js [data-split],html.js [data-reveal]{opacity:1!important;transform:none!important}
+  html.js [data-hero-line]{opacity:1!important;transform:none!important}
   .panel__media,.project__media img,.panel__media img{transform:none!important;clip-path:none!important}
   .scrollcue span,.ticker__dot{animation:none}.grain{display:none}
   *{scroll-behavior:auto!important}

@@ -54,13 +54,23 @@
 
 <!-- HERO — osmo-style cutout parallax: palm-free bg plate / dark wordmark / palm cutout (near) / cream fade to next section -->
 <header class="hero hero--cutout">
-  <div class="hero__layer hero__bg" aria-hidden="true"><img src="/hero-bali.webp" alt="" fetchpriority="high"></div>
+  <div class="hero__layer hero__bg" aria-hidden="true">
+    <picture>
+      <source media="(max-width:768px)" srcset="/hero-bali-m.webp">
+      <img src="/hero-bali.webp" alt="" fetchpriority="high">
+    </picture>
+  </div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="hero__inner">
     <h1 class="hero__wordmark"><span class="sr-only">Ananta</span></h1>
     <p class="hero__tag display" data-hero-line>Some places you visit. One or two, you never quite leave.</p>
   </div>
-  <div class="hero__layer hero__fg" aria-hidden="true"><img src="/hero-bali-fg.webp" alt=""></div>
+  <div class="hero__layer hero__fg" aria-hidden="true">
+    <picture>
+      <source media="(max-width:768px)" srcset="/hero-bali-fg-m.webp">
+      <img src="/hero-bali-fg.webp" alt="">
+    </picture>
+  </div>
   <div class="hero__fade" aria-hidden="true"></div>
   <div class="scrollcue" aria-hidden="true">Scroll<span></span></div>
 </header>

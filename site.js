@@ -94,7 +94,7 @@
 
   // ---------- clip-path image reveal ----------
   gsap.utils.toArray("[data-clip]").forEach(function (el) {
-    var img = el.querySelector("img");
+    var img = el.querySelector("img,video");
     gsap.set(el, { clipPath: "inset(100% 0% 0% 0%)" });
     gsap.to(el, {
       clipPath: "inset(0% 0% 0% 0%)", duration: 1.3, ease: "power3.out",

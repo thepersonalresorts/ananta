@@ -87,9 +87,9 @@
     var heroTl = gsap.timeline({
       scrollTrigger: { trigger: heroCut, start: "top top", end: "bottom top", scrub: true }
     });
-    if (hBg) heroTl.fromTo(hBg, { yPercent: 0 }, { yPercent: 6, ease: "none" }, 0);
-    if (hInner) heroTl.fromTo(hInner, { yPercent: 0 }, { yPercent: -7, ease: "none" }, 0);
-    if (hFg) heroTl.fromTo(hFg, { yPercent: 0 }, { yPercent: -13, ease: "none" }, 0);
+    if (hBg) heroTl.fromTo(hBg, { yPercent: 0 }, { yPercent: 8, ease: "none" }, 0);
+    if (hInner) heroTl.fromTo(hInner, { yPercent: 0 }, { yPercent: -8, ease: "none" }, 0);
+    if (hFg) heroTl.fromTo(hFg, { yPercent: 0 }, { yPercent: -18, ease: "none" }, 0);
   }
 
   // ---------- clip-path image reveal ----------

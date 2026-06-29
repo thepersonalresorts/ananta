@@ -70,9 +70,9 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 .hero__layer{position:absolute;inset:0;will-change:transform}
 .hero__layer img{width:100%;height:100%;object-fit:cover;display:block}
 .hero--cutout .hero__bg{z-index:1}
-.hero--cutout .hero__bg img{transform:scale(1.16)}
+.hero--cutout .hero__bg img{transform:scale(1.2)}
 .hero--cutout .hero__fg{z-index:4;pointer-events:none}
-.hero--cutout .hero__fg img{transform:scale(1.16)}
+.hero--cutout .hero__fg img{transform:scale(1.2)}
 /* light atmosphere only — the centre sky stays bright so the dark wordmark reads. soft corner lift + faint top shade, no centre darkening */
 .hero--cutout .hero__scrim{z-index:2;background:radial-gradient(125% 80% at 50% 34%,rgba(255,255,255,.20) 0%,rgba(255,255,255,0) 46%),linear-gradient(180deg,rgba(22,30,36,.14) 0%,rgba(22,30,36,0) 22%,rgba(22,30,36,0) 100%)}
 /* wordmark group sits in the open upper-centre sky — biased up off the geometric centre via the large padding-bottom */

@@ -134,6 +134,9 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
   .js .showcase__shot--inset{padding:0 0 16svh}
   .js .showcase__shot--inset img{width:88vw;height:54svh}
   .showcase__body{flex-direction:column;align-items:flex-start}
+  /* on mobile the stacked caption rides up onto the image — strengthen the lower scrim so
+     the eyebrow/name keep contrast instead of blending into a bright photo */
+  .showcase__scrim{background:linear-gradient(180deg,rgba(8,6,4,.42),rgba(8,6,4,0)20%,rgba(8,6,4,0)30%,rgba(8,6,4,.55)56%,rgba(8,6,4,.93))}
 }
 
 /* panels (day-in-life / lifestyle) */

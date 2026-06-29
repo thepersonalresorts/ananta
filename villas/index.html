@@ -335,7 +335,7 @@ footer{background:var(--cream2);padding:clamp(70px,10vh,120px) clamp(18px,4vw,56
     <!-- CS přepínač skrytý pro EN-only launch; cs.html zůstává v repu (CZ fast-follow) -->
     <a href="#enquire">Speak with us</a>
   </div>
-  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-menu" id="mm">
@@ -747,9 +747,14 @@ const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > 40); 
 window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
 const burger = document.getElementById('burger'), mm = document.getElementById('mm'), mmx = document.getElementById('mmx');
-burger.addEventListener('click', ()=> mm.classList.add('open'));
-mmx.addEventListener('click', ()=> mm.classList.remove('open'));
-mm.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mm.classList.remove('open')));
+let mmLastFocus = null;
+const mmOpen = ()=>{ mmLastFocus = document.activeElement; mm.classList.add('open'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; const f = mm.querySelector('a'); if(f) f.focus(); };
+const mmClose = ()=>{ mm.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; if(mmLastFocus && mmLastFocus.focus) mmLastFocus.focus(); };
+burger.addEventListener('click', ()=> mm.classList.contains('open') ? mmClose() : mmOpen());
+mmx.addEventListener('click', mmClose);
+mm.querySelectorAll('a').forEach(a=> a.addEventListener('click', mmClose));
+mm.addEventListener('click', e=>{ if(e.target === mm) mmClose(); });
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape' && mm.classList.contains('open')) mmClose(); });
 
 const reveals = document.querySelectorAll('.reveal');
 if(!isMobile && !prefersReduce && 'IntersectionObserver' in window){

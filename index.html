@@ -104,6 +104,15 @@
     .topbar{padding:14px 20px}
     .topbar__cta{padding:8px 14px;font-size:10px;letter-spacing:.18em}
   }
+  /* Mobile nav menu — burger + full-screen overlay, color inherits topbar (white over hero, ink when solid) */
+  .topbar__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;padding:7px;background:none;border:0;cursor:pointer;color:inherit}
+  .topbar__burger span{display:block;width:22px;height:1.5px;background:currentColor;transition:opacity .2s,transform .3s var(--ease)}
+  .navmenu{position:fixed;inset:0;z-index:200;background:var(--paper-warm);color:var(--ink);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;transform:translateY(-100%);visibility:hidden;transition:transform .45s cubic-bezier(.7,0,.2,1),visibility 0s linear .45s}
+  .navmenu.open{transform:translateY(0);visibility:visible;transition:transform .45s cubic-bezier(.7,0,.2,1),visibility 0s}
+  .navmenu a{font-family:var(--f-bodoni);font-weight:500;font-size:clamp(26px,7vw,34px);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);padding:12px 0}
+  .navmenu__close{position:absolute;top:16px;right:18px;padding:10px;background:none;border:0;cursor:pointer;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+  @media (max-width:880px){ .topbar__burger{display:flex} }
+  @media (min-width:881px){ .navmenu{display:none} }
 
   /* HERO - fixed video stays as page background, content scrolls over it */
   .hero__rotation{
@@ -890,8 +899,20 @@
   <div style="display:flex;gap:18px;align-items:center">
     <!-- CS přepínač skrytý dokud landing CZ neexistuje (fast-follow) -->
     <a href="#contact" class="topbar__cta">Contact</a>
+    <button class="topbar__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- MOBILE NAV MENU (burger overlay, ≤880px) -->
+<div class="navmenu" id="navMenu" aria-label="Menu">
+  <button class="navmenu__close" id="navMenuClose" type="button" aria-label="Close menu">Close ×</button>
+  <a href="/villas/">In Construction</a>
+  <a href="/apartments/">In Preparation</a>
+  <a href="#invest">Invest</a>
+  <a href="#partners">Partners</a>
+  <a href="https://www.instagram.com/anantavillasbali/" target="_blank" rel="noopener">News</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <!-- HERO -->
 <header class="hero">
@@ -1492,6 +1513,21 @@
   const topbar=document.getElementById('topbar');
   const heroH=()=>document.querySelector('.hero').offsetHeight-80;
   window.addEventListener('scroll',()=>{topbar.classList.toggle('solid',window.scrollY>heroH())},{passive:true});
+
+  // Mobile nav menu: toggle on tap, close on link / backdrop tap / Escape, basic focus mgmt
+  (function(){
+    const burger=document.getElementById('navBurger'), menu=document.getElementById('navMenu');
+    if(!burger||!menu) return;
+    const closeBtn=document.getElementById('navMenuClose');
+    let lastFocus=null;
+    const open=()=>{ lastFocus=document.activeElement; menu.classList.add('open'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; (closeBtn||menu.querySelector('a')).focus(); };
+    const close=()=>{ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus(); };
+    burger.addEventListener('click',()=> menu.classList.contains('open')?close():open());
+    if(closeBtn) closeBtn.addEventListener('click',close);
+    menu.querySelectorAll('a').forEach(a=> a.addEventListener('click',close));
+    menu.addEventListener('click',e=>{ if(e.target===menu) close(); });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&menu.classList.contains('open')) close(); });
+  })();
 
   // Hero video rotation: switch every 4s, fade. Force-play on iOS Safari.
   (function(){

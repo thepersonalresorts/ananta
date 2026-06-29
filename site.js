@@ -94,20 +94,19 @@
     }
   });
 
-  // ---------- project showcase: crossfade stacked images while a sticky panel holds ----------
-  // The section is tall; .showcase__sticky is position:sticky; images cross-fade with scroll.
-  // Native sticky (not GSAP pin) keeps it smooth on mobile.
+  // ---------- project showcase: clean vertical WIPE between stacked images (hba style) ----------
+  // The section is tall; .showcase__sticky is position:sticky. Each next image is clipped
+  // (hidden) and wipes UP over the previous as you scroll — a clean reveal, NOT an opacity
+  // crossfade (which looked muddy / double-exposed). Each image holds briefly before the next.
   gsap.utils.toArray("[data-showcase]").forEach(function (sc) {
     var imgs = sc.querySelectorAll(".showcase__img");
     if (imgs.length < 2) return;
-    gsap.set(imgs, { opacity: 0 });
-    gsap.set(imgs[0], { opacity: 1 });
-    var tl = gsap.timeline({ scrollTrigger: { trigger: sc, start: "top top", end: "bottom bottom", scrub: 0.6 } });
+    gsap.set(imgs, { opacity: 1 });
+    for (var i = 1; i < imgs.length; i++) gsap.set(imgs[i], { clipPath: "inset(100% 0% 0% 0%)", scale: 1.08 });
+    var tl = gsap.timeline({ scrollTrigger: { trigger: sc, start: "top top", end: "bottom bottom", scrub: 0.7 } });
     for (var i = 1; i < imgs.length; i++) {
-      // gentle ken-burns on the incoming image as it fades over the previous one
-      gsap.set(imgs[i], { scale: 1.08 });
-      tl.to(imgs[i], { opacity: 1, duration: 1 }, ">")
-        .to(imgs[i], { scale: 1, duration: 1.4 }, "<");
+      tl.to(imgs[i], { clipPath: "inset(0% 0% 0% 0%)", ease: "power2.inOut", duration: 1 }, i === 1 ? 0.35 : "+=0.45")
+        .to(imgs[i], { scale: 1, ease: "power2.out", duration: 1.2 }, "<");
     }
   });
 

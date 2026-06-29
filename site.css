@@ -90,10 +90,12 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 .project__status{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .project__status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
 .project__name{font-family:var(--serif);font-weight:330;font-size:clamp(38px,6vw,86px);line-height:1;color:#fff}
-/* "Ananta" rendered as the wordmark logo, sized to the headline's cap-height and recolored
-   via currentColor (mask technique, same as nav/hero). em units keep it scaling with the
-   responsive heading. The sr-only "Ananta" inside keeps the h2 reading "Ananta Villas". */
-.project__brandmark{display:inline-block;height:.74em;width:calc(.74em * 782.5 / 153);vertical-align:baseline;background-color:currentColor;-webkit-mask:url(/ananta-wordmark.svg) left center/contain no-repeat;mask:url(/ananta-wordmark.svg) left center/contain no-repeat;margin-right:.24em;position:relative;top:.04em}
+/* "Ananta" rendered as the wordmark logo — it's the dominant brand mark, with the place
+   word ("Villas"/"Canggu") set smaller and tucked on the same baseline. Recolored via
+   currentColor (mask technique, same as nav/hero). em units keep both scaling with the
+   responsive heading. The sr-only "Ananta " inside keeps the h2 reading "Ananta Villas". */
+.project__brandmark{display:inline-block;height:.96em;width:calc(.96em * 782.5 / 153);vertical-align:baseline;background-color:currentColor;-webkit-mask:url(/ananta-wordmark.svg) left center/contain no-repeat;mask:url(/ananta-wordmark.svg) left center/contain no-repeat;margin-right:.26em;position:relative;top:.05em}
+.project__place{font-size:.68em}
 .project__meta{list-style:none;font-family:var(--sans);font-size:13.5px;letter-spacing:.02em;color:rgba(255,255,255,.82);text-align:right;line-height:1.9}
 .project__cta{display:inline-flex;align-items:center;gap:10px;margin-top:14px;font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:5px}
 
@@ -188,7 +190,7 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 
 /* footer */
 .foot{background:var(--cream);border-top:1px solid var(--line);padding:46px var(--pad);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:12px;letter-spacing:.04em;color:var(--soft)}
-.foot__brand{font-family:var(--serif);font-size:17px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+.foot__brand{display:inline-block;height:16px;width:calc(16px * 782.5 / 153);background-color:var(--ink);-webkit-mask:url(/ananta-wordmark.svg) left center/contain no-repeat;mask:url(/ananta-wordmark.svg) left center/contain no-repeat}
 .foot__note{max-width:48ch}
 .foot a:hover{color:var(--ink)}
 .social-ig{display:inline-flex;opacity:.7;transition:opacity .25s}.social-ig:hover{opacity:1}

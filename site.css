@@ -91,6 +91,17 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
   .hero--cutout .hero__inner{justify-content:center;padding:0 var(--pad) clamp(40px,9vh,90px)}
   .hero--cutout .hero__fade{height:32%}
 }
+/* subpage hero — scroll-expansion: the video starts as a centred card and grows to full-bleed
+   as you scroll (clip-path scrub in /site.js). Scoped to .hero--expand; landing hero untouched.
+   No-JS / reduced-motion: the .js-gated rules drop, leaving a normal full-bleed hero. */
+.hero--expand{background:var(--dark)}
+.hero--expand .hero__stage{position:relative;height:100svh;min-height:560px;overflow:hidden}
+.hero--expand .hero__media{inset:0}
+.hero--expand .scrollcue{z-index:6}
+.js .hero--expand .hero__media{clip-path:inset(12% 10% 23% 10% round 14px);will-change:clip-path}
+@media(max-width:768px){
+  .js .hero--expand .hero__media{clip-path:inset(8% 5% 25% 5% round 12px)}
+}
 .scrollcue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);color:rgba(255,255,255,.7);font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:9px}
 .scrollcue span{width:1px;height:42px;background:linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,0));animation:cue 2.4s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -299,6 +310,8 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 .team__item{display:flex;flex-direction:column;gap:7px;border-top:1px solid var(--ink);padding-top:18px}
 .team__role{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}
 .team__item strong{font-family:var(--serif);font-weight:360;font-size:clamp(20px,2vw,27px);color:var(--ink);letter-spacing:.01em}
+.team__item a{border-bottom:1px solid var(--line);padding-bottom:1px;transition:border-color .25s}
+.team__item a:hover{border-bottom-color:var(--ink)}
 .team__note{font-family:var(--sans);font-size:13px;color:var(--soft);line-height:1.45}
 @media(max-width:760px){.team__grid{grid-template-columns:1fr 1fr;gap:24px}}
 

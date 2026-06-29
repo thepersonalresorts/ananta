@@ -134,6 +134,27 @@
     });
   });
 
+  // ---------- subpage hero: scroll-expansion (video card grows to full-bleed) ----------
+  // The hero video starts clipped to a centred card (clip-path set in CSS per breakpoint) and the
+  // clip opens to full-bleed as the pinned hero scrubs past, the scrim deepening in step. Lands on
+  // the normal full-bleed hero once expanded. Scoped to .hero--expand (subpages only).
+  var heroExp = document.querySelector(".hero--expand");
+  if (heroExp) {
+    var hxMedia = heroExp.querySelector(".hero__media");
+    var hxScrim = heroExp.querySelector(".hero__scrim");
+    if (hxMedia) {
+      // explicit 4-value start (matching CSS per breakpoint) — a collapsed 3-value computed
+      // clip-path would make GSAP interpolate inconsistently and drop the corner radius.
+      var narrow = matchMedia("(max-width:768px)").matches;
+      var startClip = narrow ? "inset(8% 5% 26% 5% round 12px)" : "inset(12% 10% 23% 10% round 14px)";
+      var hxTl = gsap.timeline({
+        scrollTrigger: { trigger: heroExp, start: "top top", end: "+=100%", scrub: true, pin: true, anticipatePin: 1, invalidateOnRefresh: true }
+      });
+      hxTl.fromTo(hxMedia, { clipPath: startClip }, { clipPath: "inset(0% 0% 0% 0% round 0px)", ease: "none" }, 0);
+      if (hxScrim) hxTl.fromTo(hxScrim, { opacity: 0.25 }, { opacity: 1, ease: "none" }, 0);
+    }
+  }
+
   // ---------- hero headline: a single line-mask entrance on load ----------
   // Per David: the per-text scroll reveals are gone — all body/section text renders static,
   // so the page's motion is carried by the imagery (clip reveal, parallax, showcase). The one

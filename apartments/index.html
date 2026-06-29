@@ -47,19 +47,21 @@
 </div>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="hero__media" data-parallax="0.1">
-    <video autoplay muted loop playsinline preload="metadata" poster="/apartments/hero-poster.jpg">
-      <source src="/apartments/hero-m.mp4" type="video/mp4" media="(max-width:768px)">
-      <source src="/apartments/hero.mp4" type="video/mp4">
-    </video>
+<header class="hero hero--expand">
+  <div class="hero__stage">
+    <div class="hero__media">
+      <video autoplay muted loop playsinline preload="metadata" poster="/apartments/hero-poster.jpg">
+        <source src="/apartments/hero-m.mp4" type="video/mp4" media="(max-width:768px)">
+        <source src="/apartments/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__scrim"></div>
+    <div class="hero__inner">
+      <p class="eyebrow" data-reveal>Ananta Canggu · Padang Linjong</p>
+      <h1 class="display" data-hero-line>Three buildings. Thirty-six homes. Four minutes to the surf.</h1>
+    </div>
+    <div class="scrollcue" aria-hidden="true">Scroll to expand<span></span></div>
   </div>
-  <div class="hero__scrim"></div>
-  <div class="hero__inner">
-    <p class="eyebrow" data-reveal>Ananta Canggu · Padang Linjong</p>
-    <h1 class="display" data-hero-line>Three buildings. Thirty-six homes. Four minutes to the surf.</h1>
-  </div>
-  <div class="scrollcue" aria-hidden="true">Scroll<span></span></div>
 </header>
 
 <!-- INTRO -->

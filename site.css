@@ -102,6 +102,13 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 @media(max-width:768px){
   .js .hero--expand .hero__media{clip-path:inset(8% 5% 25% 5% round 12px)}
 }
+/* subpage hero identity — the project brand reads as the title card (Ananta wordmark +
+   place word, big), so it's unmistakable which project you're on. Mirrors the landing
+   showcase lockup. The tagline sits below as a supporting line, not a competing headline. */
+.hero--expand .hero__brand{font-family:var(--serif);font-weight:330;font-size:clamp(40px,6.6vw,90px);line-height:1;color:#fff;margin:0 0 clamp(14px,2.2vh,22px);text-shadow:0 2px 26px rgba(10,8,6,.42)}
+.hero__brandmark{display:inline-block;height:.96em;width:calc(.96em * 782.5 / 153);vertical-align:baseline;background-color:#fff;-webkit-mask:url(/ananta-wordmark.svg) left center/contain no-repeat;mask:url(/ananta-wordmark.svg) left center/contain no-repeat;margin-right:.26em;position:relative;top:.05em;filter:drop-shadow(0 2px 20px rgba(10,8,6,.4))}
+.hero__brand-place{font-size:.62em}
+.hero__tagline{font-family:var(--serif);font-weight:340;font-size:clamp(18px,1.9vw,27px);line-height:1.2;letter-spacing:-.01em;color:rgba(255,255,255,.9);max-width:26ch;text-shadow:0 2px 22px rgba(10,8,6,.4)}
 .scrollcue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);color:rgba(255,255,255,.7);font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:9px}
 .scrollcue span{width:1px;height:42px;background:linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,0));animation:cue 2.4s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -129,8 +136,7 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 .project:hover .project__media img{transform:scale(1.09)}
 .project__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,6,4,.2),rgba(8,6,4,0)35%,rgba(8,6,4,.78))}
 .project__body{position:absolute;left:0;right:0;bottom:0;padding:0 var(--pad) clamp(46px,7vh,86px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:30px}
-.project__status{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.project__status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.project__status{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:18px}
 .project__name{font-family:var(--serif);font-weight:330;font-size:clamp(38px,6vw,86px);line-height:1;color:#fff}
 /* "Ananta" rendered as the wordmark logo — it's the dominant brand mark, with the place
    word ("Villas"/"Canggu") set smaller and tucked on the same baseline. Recolored via
@@ -187,19 +193,17 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 .panel__media img{width:100%;height:100%;object-fit:cover;transform:scale(1.06)}
 .panel__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,6,4,.18),rgba(8,6,4,0)40%,rgba(8,6,4,.72))}
 .panel__cap{position:absolute;left:0;right:0;bottom:0;padding:0 var(--pad) clamp(54px,9vh,110px);color:#fff;max-width:760px}
-.panel__time{font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:.3em;color:rgba(255,255,255,.7);margin-bottom:18px}
 .panel__title{font-family:var(--serif);font-weight:330;font-size:clamp(34px,5.2vw,78px);line-height:1.05;color:#fff;margin-bottom:22px}
 .panel__sensory{color:rgba(255,255,255,.88);max-width:40ch}
 
 /* lifestyle moments — compact hover-reveal (replaces 3 full-bleed panels on the landing).
    Desktop: text list left, image right that swaps on hover. Mobile: stacked cards (img + text). */
 .moments{padding:clamp(80px,13vh,150px) var(--pad);border-top:1px solid var(--line);background:var(--cream)}
-.moments .eyebrow{margin-bottom:clamp(26px,4vh,44px)}
+.moments__head{font-size:clamp(30px,4.6vw,56px);line-height:1.02;color:var(--ink);max-width:18ch;margin-bottom:clamp(34px,5vh,58px)}
 .moments__grid{display:grid;grid-template-columns:1fr 1.04fr;gap:clamp(30px,5vw,84px);align-items:center}
 .moments__list{list-style:none}
 .moments__item{padding:clamp(20px,3vh,30px) 0;border-top:1px solid var(--line)}
 .moments__item:first-child{border-top:0}
-.moments__time{display:block;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--soft);margin-bottom:12px}
 .moments__title{font-size:clamp(26px,3.3vw,44px);line-height:1.04;color:var(--ink)}
 .moments__copy{margin-top:14px;max-width:44ch;color:#473f36}
 .moments__thumb{display:none}
@@ -245,10 +249,8 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 .btn--light{border-color:#fff;color:#fff}.btn--light:hover{background:#fff;color:var(--ink)}
 
 /* partners / ticker */
-.ticker{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:48px;font-family:var(--sans);font-size:13px;letter-spacing:.03em;color:var(--soft)}
+.ticker{display:flex;flex-wrap:wrap;gap:12px 30px;align-items:center;margin-top:48px;font-family:var(--sans);font-size:13px;letter-spacing:.03em;color:var(--soft)}
 .ticker strong{color:var(--ink);font-weight:600}
-.ticker__dot{width:8px;height:8px;border-radius:50%;background:#8b9779;box-shadow:0 0 0 0 rgba(139,151,121,.6);animation:pulse 2.4s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(139,151,121,.5)}70%{box-shadow:0 0 0 10px rgba(139,151,121,0)}100%{box-shadow:0 0 0 0 rgba(139,151,121,0)}}
 
 /* contact */
 .contact__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
@@ -299,7 +301,7 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
   body{font-size:16px}
   .hero__wordmark{width:78vw}
   .hero__tag{font-size:clamp(17px,4.4vw,22px)}
-  .panel__title,.project__name{font-size:clamp(30px,9vw,48px)}
+  .panel__title,.project__name,.hero--expand .hero__brand{font-size:clamp(30px,8.4vw,46px)}
   .prolog__head,.invest__head{font-size:clamp(28px,8vw,40px)}
   .project__body{flex-direction:column;align-items:flex-start}.project__meta{text-align:left}
   .panel,.hero,.project{min-height:520px}
@@ -307,7 +309,7 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 @media(prefers-reduced-motion:reduce){
   html.js [data-hero-line]{opacity:1!important;transform:none!important}
   .panel__media,.project__media img,.panel__media img{transform:none!important;clip-path:none!important}
-  .scrollcue span,.ticker__dot{animation:none}.grain{display:none}
+  .scrollcue span{animation:none}.grain{display:none}
   *{scroll-behavior:auto!important}
 }
 
